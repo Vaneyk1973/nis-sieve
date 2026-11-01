@@ -15,6 +15,13 @@ def run(*args):
     return result.stdout
 
 
+def assert_fails(*args):
+    result = subprocess.run(args, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    print(f"$ {shlex.join(args)}\nexit {result.returncode}\n{result.stdout}", flush=True)
+    assert result.returncode not in (0, -6, -11), result.stdout
+    assert "nan" not in result.stdout, result.stdout
+
+
 def check_reference(trace, algorithm, capacity, requests, misses):
     output = run(
         "cachesim", str(trace), "txt", algorithm, str(capacity),
@@ -71,6 +78,39 @@ with tempfile.TemporaryDirectory() as directory:
     )
     assert "all checks passed" in run("./test_arc")
     print("PASS ARC prototype: known-answer test with sanitizers", flush=True)
+
+    run(
+        "g++", "-std=c++17", "-O2", "-Wall", "-Wextra", "-Wpedantic",
+        "-fsanitize=address,undefined",
+        str(repository / "prototypes/arc/replay_arc.cpp"), "-o", "replay_arc",
+    )
+    Path("empty.bin").write_bytes(b"")
+    record = (1).to_bytes(4, "little") + (7).to_bytes(8, "little") + bytes(12)
+    Path("one.bin").write_bytes(record)
+    Path("broken.bin").write_bytes(record + b"x")
+    assert_fails("./replay_arc", "empty.bin", "10")
+    assert_fails("./replay_arc", "broken.bin", "10")
+    for capacity in ("-1", "0", "abc", "1x", "0%", "-1%", "101%", "1x%", "", "99999999999999999999999"):
+        assert_fails("./replay_arc", "one.bin", capacity)
+    assert "capacity 1 misses 1 miss_ratio 1.0000 " in run("./replay_arc", "one.bin", "1")
+    print("PASS replay_arc rejects empty traces and invalid capacities", flush=True)
+
+    compare = str(repository / "tests/compare_reference.py")
+    Path("prototype.txt").write_text(
+        "requests 10 unique 5\n"
+        "capacity 4 misses 6 miss_ratio 0.6000 evictions 1 ghost_hits 0 list_ops 1\n"
+    )
+    Path("same.txt").write_text("arc 4 x ARC cache size 4, 10 req, miss ratio 0.6000\n")
+    Path("other.txt").write_text("arc 4 x ARC cache size 4, 10 req, miss ratio 0.7000\n")
+    Path("length.txt").write_text("arc 4 x ARC cache size 4, 11 req, miss ratio 0.6000\n")
+    Path("capacity.txt").write_text("arc 8 x ARC cache size 8, 10 req, miss ratio 0.6000\n")
+    Path("no_arc.txt").write_text("lru 4 x LRU cache size 4, 10 req, miss ratio 0.6000\n")
+    Path("no_results.txt").write_text("")
+    run("python3", "-I", compare, "prototype.txt", "same.txt")
+    for reference_file in ("other.txt", "length.txt", "capacity.txt", "no_arc.txt"):
+        assert_fails("python3", "-I", compare, "prototype.txt", reference_file)
+    assert_fails("python3", "-I", compare, "no_results.txt", "same.txt")
+    print("PASS comparison fails when prototype and reference differ", flush=True)
 
     sample = reference / "libCacheSim/data/twitter_cluster52.csv"
     print(f"Bundled CSV SHA256: {hashlib.sha256(sample.read_bytes()).hexdigest()}", flush=True)

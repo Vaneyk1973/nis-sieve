@@ -32,7 +32,11 @@ g++ -std=c++17 -O2 -Wall -Wextra -Wpedantic \
 cd "$(mktemp -d)"
 for policy in fifo lru sieve arc; do
     for capacity in "${CAPACITIES[@]}"; do
-        cachesim "$PREFIX" oracleGeneral "$policy" "$capacity" --ignore-obj-size 1 2>&1 |
-            sed 's/\x1b\[[0-9;]*m//g' | grep 'miss ratio' | sed -E 's/, throughput.*//; s#^.*/##'
+        line="$(cachesim "$PREFIX" oracleGeneral "$policy" "$capacity" --ignore-obj-size 1 2>&1 |
+            sed 's/\x1b\[[0-9;]*m//g' | grep 'miss ratio' | sed -E 's/, throughput.*//; s#^.*/##')"
+        echo "$policy $capacity $line"
     done
 done | tee "$OUT/reference.txt"
+
+python3 -I "$ROOT/tests/compare_reference.py" "$OUT/arc_prototype.txt" "$OUT/reference.txt" |
+    tee "$OUT/arc_vs_reference.txt"

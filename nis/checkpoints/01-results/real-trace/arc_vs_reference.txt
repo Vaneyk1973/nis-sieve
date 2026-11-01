@@ -1,0 +1,4 @@
+ok capacity 1746: prototype 0.4851, reference 0.4851
+ok capacity 17469: prototype 0.4351, reference 0.4351
+ok capacity 174694: prototype 0.3864, reference 0.3864
+PASS prototype matches reference

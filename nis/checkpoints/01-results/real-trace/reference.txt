@@ -1,12 +1,12 @@
-meta_reag_5m.bin FIFO cache size     2KiB,          5000000 req, miss ratio 0.5001
-meta_reag_5m.bin FIFO cache size    17KiB,          5000000 req, miss ratio 0.4517
-meta_reag_5m.bin FIFO cache size   171KiB,          5000000 req, miss ratio 0.3968
-meta_reag_5m.bin LRU cache size     2KiB,          5000000 req, miss ratio 0.4938
-meta_reag_5m.bin LRU cache size    17KiB,          5000000 req, miss ratio 0.4437
-meta_reag_5m.bin LRU cache size   171KiB,          5000000 req, miss ratio 0.3892
-meta_reag_5m.bin Sieve cache size     2KiB,          5000000 req, miss ratio 0.4869
-meta_reag_5m.bin Sieve cache size    17KiB,          5000000 req, miss ratio 0.4357
-meta_reag_5m.bin Sieve cache size   171KiB,          5000000 req, miss ratio 0.3877
-meta_reag_5m.bin ARC cache size     2KiB,          5000000 req, miss ratio 0.4851
-meta_reag_5m.bin ARC cache size    17KiB,          5000000 req, miss ratio 0.4351
-meta_reag_5m.bin ARC cache size   171KiB,          5000000 req, miss ratio 0.3864
+fifo 1746 meta_reag_5m.bin FIFO cache size     2KiB,          5000000 req, miss ratio 0.5001
+fifo 17469 meta_reag_5m.bin FIFO cache size    17KiB,          5000000 req, miss ratio 0.4517
+fifo 174694 meta_reag_5m.bin FIFO cache size   171KiB,          5000000 req, miss ratio 0.3968
+lru 1746 meta_reag_5m.bin LRU cache size     2KiB,          5000000 req, miss ratio 0.4938
+lru 17469 meta_reag_5m.bin LRU cache size    17KiB,          5000000 req, miss ratio 0.4437
+lru 174694 meta_reag_5m.bin LRU cache size   171KiB,          5000000 req, miss ratio 0.3892
+sieve 1746 meta_reag_5m.bin Sieve cache size     2KiB,          5000000 req, miss ratio 0.4869
+sieve 17469 meta_reag_5m.bin Sieve cache size    17KiB,          5000000 req, miss ratio 0.4357
+sieve 174694 meta_reag_5m.bin Sieve cache size   171KiB,          5000000 req, miss ratio 0.3877
+arc 1746 meta_reag_5m.bin ARC cache size     2KiB,          5000000 req, miss ratio 0.4851
+arc 17469 meta_reag_5m.bin ARC cache size    17KiB,          5000000 req, miss ratio 0.4351
+arc 174694 meta_reag_5m.bin ARC cache size   171KiB,          5000000 req, miss ratio 0.3864
