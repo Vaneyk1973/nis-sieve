@@ -1,0 +1,105 @@
+$ g++ -dumpfullversion
+16.2.0
+
+$ meson --version
+1.12.1
+
+$ ninja --version
+1.12.1
+
+$ cmake --version
+cmake version 3.31.6
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+
+$ meson setup build
+The Meson build system
+Version: 1.12.1
+Source dir: /tmp/tmpffsentfj
+Build dir: /tmp/tmpffsentfj/build
+Build type: native build
+Project name: smoke
+Project version: undefined
+C++ compiler for the host machine: c++ (gcc 16.2.0 "c++ (GCC) 16.2.0")
+C++ linker for the host machine: c++ ld.bfd 2.44
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Build targets in project: 1
+
+Found ninja-1.12.1 at /usr/bin/ninja
+
+$ meson compile -C build
+ninja: Entering directory `/tmp/tmpffsentfj/build'
+[1/2] Compiling C++ object smoke.p/main.cpp.o
+[2/2] Linking target smoke
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: /usr/bin/ninja -C /tmp/tmpffsentfj/build
+
+$ ./build/smoke
+
+PASS GCC / Meson: compile and run
+$ cachesim /workspace/tests/data/basic.txt txt lru 1 --ignore-obj-size 1
+[32m[INFO]  11-01-2026 19:51:21 cli_parser.c:545  (tid=135188493645120): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
+[0m/workspace/tests/data/basic.txt LRU cache size        1,                6 req, miss ratio 1.0000, throughput 1.20 MQPS
+
+PASS lru: capacity=1, misses=6/6
+$ cachesim /workspace/tests/data/basic.txt txt lru 2 --ignore-obj-size 1
+[32m[INFO]  11-01-2026 19:51:21 cli_parser.c:545  (tid=129507659269440): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
+[0m/workspace/tests/data/basic.txt LRU cache size        2,                6 req, miss ratio 0.6667, throughput 1.01 MQPS
+
+PASS lru: capacity=2, misses=4/6
+$ cachesim /workspace/tests/data/basic.txt txt lru 3 --ignore-obj-size 1
+[32m[INFO]  11-01-2026 19:51:21 cli_parser.c:545  (tid=127404275094848): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
+[0m/workspace/tests/data/basic.txt LRU cache size        3,                6 req, miss ratio 0.5000, throughput 0.87 MQPS
+
+PASS lru: capacity=3, misses=3/6
+$ cachesim /workspace/tests/data/basic.txt txt sieve 1 --ignore-obj-size 1
+[32m[INFO]  11-01-2026 19:51:21 cli_parser.c:545  (tid=125843451970880): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
+[0m/workspace/tests/data/basic.txt Sieve cache size        1,                6 req, miss ratio 1.0000, throughput 1.01 MQPS
+
+PASS sieve: capacity=1, misses=6/6
+$ cachesim /workspace/tests/data/basic.txt txt sieve 2 --ignore-obj-size 1
+[32m[INFO]  11-01-2026 19:51:21 cli_parser.c:545  (tid=129495070696768): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
+[0m/workspace/tests/data/basic.txt Sieve cache size        2,                6 req, miss ratio 0.6667, throughput 0.66 MQPS
+
+PASS sieve: capacity=2, misses=4/6
+$ cachesim /workspace/tests/data/basic.txt txt sieve 3 --ignore-obj-size 1
+[32m[INFO]  11-01-2026 19:51:21 cli_parser.c:545  (tid=132028835280192): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
+[0m/workspace/tests/data/basic.txt Sieve cache size        3,                6 req, miss ratio 0.5000, throughput 0.60 MQPS
+
+PASS sieve: capacity=3, misses=3/6
+$ cachesim /workspace/tests/data/order.txt txt lru 3 --ignore-obj-size 1
+[32m[INFO]  11-01-2026 19:51:21 cli_parser.c:545  (tid=130698527475008): trace path: /workspace/tests/data/order.txt, trace_type PLAIN_TXT_TRACE, ofilepath order.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
+[0m/workspace/tests/data/order.txt LRU cache size        3,                8 req, miss ratio 0.5000, throughput 0.73 MQPS
+
+PASS lru: capacity=3, misses=4/8
+$ cachesim /workspace/tests/data/order.txt txt sieve 3 --ignore-obj-size 1
+[32m[INFO]  11-01-2026 19:51:21 cli_parser.c:545  (tid=129301833504064): trace path: /workspace/tests/data/order.txt, trace_type PLAIN_TXT_TRACE, ofilepath order.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
+[0m/workspace/tests/data/order.txt Sieve cache size        3,                8 req, miss ratio 0.6250, throughput 1.12 MQPS
+
+PASS sieve: capacity=3, misses=5/8
+$ cachesim unique.txt txt s3fifo 10 --ignore-obj-size 1
+[32m[INFO]  11-01-2026 19:51:22 cli_parser.c:545  (tid=133803553187136): trace path: unique.txt, trace_type PLAIN_TXT_TRACE, ofilepath unique.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, s3fifo, ignore object size
+[0munique.txt S3FIFO-0.1000-2 cache size       10,               20 req, miss ratio 1.0000, throughput 0.29 MQPS
+
+PASS s3fifo: capacity=10, misses=20/20
+$ cachesim repeated.txt txt s3fifo 20 --ignore-obj-size 1
+[32m[INFO]  11-01-2026 19:51:22 cli_parser.c:545  (tid=137023646696768): trace path: repeated.txt, trace_type PLAIN_TXT_TRACE, ofilepath repeated.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, s3fifo, ignore object size
+[0mrepeated.txt S3FIFO-0.1000-2 cache size       20,               20 req, miss ratio 0.0500, throughput 1.68 MQPS
+
+PASS s3fifo: capacity=20, misses=1/20
+$ cachesim repeated.txt txt s3fifo 10 --ignore-obj-size 1
+[32m[INFO]  11-01-2026 19:51:22 cli_parser.c:545  (tid=138310512944448): trace path: repeated.txt, trace_type PLAIN_TXT_TRACE, ofilepath repeated.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, s3fifo, ignore object size
+[0mrepeated.txt S3FIFO-0.1000-2 cache size       10,               20 req, miss ratio 1.0000, throughput 2.21 MQPS
+
+PASS s3fifo: capacity=10, misses=20/20
+Bundled CSV SHA256: cf4d37d041569bb30c3bc32b7b54dd40b40438c53ee72e4919acf810063d189a
+$ cachesim /opt/sieve-reference/libCacheSim/data/twitter_cluster52.csv csv sieve 1024 --ignore-obj-size 1 --num-req 1000 -t time-col=1,obj-id-col=2,obj-size-col=3,delimiter=,
+[32m[INFO]  11-01-2026 19:51:22    csv.c:150  (tid=136497847018816): detect csv trace has header 1
+[0m[32m[INFO]  11-01-2026 19:51:22 cli_parser.c:545  (tid=136497847018816): trace path: /opt/sieve-reference/libCacheSim/data/twitter_cluster52.csv, trace_type CSV_TRACE, ofilepath twitter_cluster52.csv.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, trace-type-params: time-col=1,obj-id-col=2,obj-size-col=3,delimiter=,, ignore object size
+[0m/opt/sieve-reference/libCacheSim/data/twitter_cluster52.csv Sieve cache size     1KiB,             1000 req, miss ratio 0.4730, throughput 1.90 MQPS
+
+PASS bundled CSV: 1000 requests parsed; this is a format check
+PASS analytical operations ledger totals: {'lru_hit': 2, 'lru_list_insert': 6, 'lru_list_remove': 4, 'sieve_hit': 2, 'sieve_list_insert': 4, 'sieve_list_remove': 2, 'sieve_scan': 4, 'sieve_bit_write': 8}
+Operations ledger is an analytical expectation, not measured policy counters.
+ALL CHECKS PASSED
