@@ -26,7 +26,8 @@ def check_reference(trace, algorithm, capacity, requests, misses):
     print(f"PASS {algorithm}: capacity={capacity}, misses={misses}/{requests}", flush=True)
 
 
-fixtures = Path(__file__).resolve().parent / "data"
+repository = Path(__file__).resolve().parent.parent
+fixtures = repository / "tests/data"
 reference = Path("/opt/sieve-reference")
 assert run("g++", "-dumpfullversion").strip() == "16.2.0"
 assert run("meson", "--version").strip() == "1.12.1"
@@ -54,12 +55,22 @@ with tempfile.TemporaryDirectory() as directory:
     for algorithm, misses in (("lru", 4), ("sieve", 5)):
         check_reference(fixtures / "order.txt", algorithm, 3, 8, misses)
 
+    check_reference(fixtures / "order.txt", "arc", 3, 8, 4)
+    for algorithm, misses in (("lru", 9), ("sieve", 7), ("arc", 7)):
+        check_reference(fixtures / "example.txt", algorithm, 4, 11, misses)
+
     Path("unique.txt").write_text("".join(f"{i}\n" for i in range(1, 21)))
     Path("repeated.txt").write_text("1\n" * 20)
-    check_reference("unique.txt", "s3fifo", 10, 20, 20)
-    check_reference("repeated.txt", "s3fifo", 20, 20, 1)
-    # This pinned reference rejects an object as large as its small FIFO.
-    check_reference("repeated.txt", "s3fifo", 10, 20, 20)
+    check_reference("unique.txt", "arc", 10, 20, 20)
+    check_reference("repeated.txt", "arc", 10, 20, 1)
+
+    run(
+        "g++", "-std=c++17", "-O2", "-Wall", "-Wextra", "-Wpedantic",
+        "-fsanitize=address,undefined",
+        str(repository / "prototypes/arc/test_arc.cpp"), "-o", "test_arc",
+    )
+    assert "all checks passed" in run("./test_arc")
+    print("PASS ARC prototype: known-answer test with sanitizers", flush=True)
 
     sample = reference / "libCacheSim/data/twitter_cluster52.csv"
     print(f"Bundled CSV SHA256: {hashlib.sha256(sample.read_bytes()).hexdigest()}", flush=True)

@@ -3,7 +3,7 @@ FROM gcc:16.2.0-trixie
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         ca-certificates cmake curl git libglib2.0-dev libgoogle-perftools-dev \
-        libzstd-dev ninja-build pkg-config python3-venv \
+        libzstd-dev ninja-build pkg-config python3-venv zstd \
     && rm -rf /var/lib/apt/lists/* \
     && python3 -m venv /opt/venv \
     && /opt/venv/bin/pip install --no-cache-dir meson==1.12.1
