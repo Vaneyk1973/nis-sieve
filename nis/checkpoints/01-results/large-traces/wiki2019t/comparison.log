@@ -1,0 +1,7 @@
+ok capacity 2798: misses, prototype 8685707, reference 8685707
+ok capacity 8395: misses, prototype 8055628, reference 8055628
+ok capacity 27986: misses, prototype 7054212, reference 7054212
+ok capacity 83958: misses, prototype 5837918, reference 5837918
+ok capacity 279861: misses, prototype 4419705, reference 4419705
+ok capacity 839585: misses, prototype 3344383, reference 3344383
+PASS prototype matches reference

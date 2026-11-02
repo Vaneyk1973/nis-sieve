@@ -1,0 +1,108 @@
+{
+  "seed": 20261103,
+  "profiles": [
+    {
+      "profile": "one_object",
+      "requests": 4096,
+      "unique": 1,
+      "input_sha256": "4ad44e9bec94ac4ebeced9f6f521a25bf57c07b371d61e2714a80e24df3eb7dd"
+    },
+    {
+      "profile": "unique_scan",
+      "requests": 4096,
+      "unique": 4096,
+      "input_sha256": "726ad8eb45e958aef077403409fe76870668807469af66ffdcf2f4d96077a9f0"
+    },
+    {
+      "profile": "loop_8",
+      "requests": 4096,
+      "unique": 8,
+      "input_sha256": "935052ea104b3db3a003235af1e413b6e708bd723036949f73aa684b899e376b"
+    },
+    {
+      "profile": "loop_9",
+      "requests": 4608,
+      "unique": 9,
+      "input_sha256": "fe1cc8e1a83d732a50e18b46cfb878da9589196d1ce17454b0eaf7559bdea66d"
+    },
+    {
+      "profile": "scan_pollution",
+      "requests": 7168,
+      "unique": 1032,
+      "input_sha256": "9a44ebdab20708149328fd2edea553e90eedeeed6889b0fc53f9e7e7928f752c"
+    },
+    {
+      "profile": "rotating_hotsets",
+      "requests": 8192,
+      "unique": 128,
+      "input_sha256": "22bce404b7edf2acc6a1767d50160d98031e99856365ce064ebf51ca321c1c04"
+    },
+    {
+      "profile": "uniform",
+      "requests": 8192,
+      "unique": 128,
+      "input_sha256": "4e14cf3959387990f6568afbbebc097fc5538ca52adf4e70cb7eda70b6288a9a"
+    },
+    {
+      "profile": "skewed",
+      "requests": 8192,
+      "unique": 128,
+      "input_sha256": "3b8c5b6c04c0332807498756be605d03311a68f71d060d862ce43c8fd0364e06"
+    },
+    {
+      "profile": "hot_and_cold",
+      "requests": 8192,
+      "unique": 4104,
+      "input_sha256": "537ebec79e129fe89463d73e05dc1b4b3bee71e40f98338373938b7227a65851"
+    },
+    {
+      "profile": "high_ids",
+      "requests": 5120,
+      "unique": 5,
+      "input_sha256": "36df987beb8a8f226fa398b2b2aa9a9783b3efa09f41066a18399ded267bc583"
+    },
+    {
+      "profile": "renamed_uniform",
+      "requests": 8192,
+      "unique": 128,
+      "input_sha256": "5d0ae4c28dbfaa794523ee46c40e1b98e310124e348f129ff42d664fd1946a45"
+    },
+    {
+      "profile": "metadata_uniform",
+      "requests": 8192,
+      "unique": 128,
+      "input_sha256": "456f6d4b311460d0b552d19e7167ecf804ba571112121aa4292b56f0380d9817"
+    }
+  ],
+  "capacities": [
+    1,
+    2,
+    3,
+    7,
+    8,
+    9,
+    16,
+    64,
+    129
+  ],
+  "exact_arc_matches": 108,
+  "known_answer_checks": 38,
+  "metamorphic_checks": 18,
+  "repeatability_checks": 1,
+  "zero_size_mismatch_rejections": 1,
+  "normalized_zero_size_exact_matches": 1,
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "warmup_requests": 0,
+  "source_sha256": {
+    "tests/check_scenarios.py": "4945f6c8efd2e6ac6049bec10160100fdc11f25bdf59d4d62736867026b5c3e8",
+    "tests/check_large_traces.py": "670770b470b0e0d51b0c9a97c739b733d1a55e33f92fcac71eb08577abf8f7df",
+    "tests/compare_reference.py": "788f6a1a98d75185844b8483496c0f9cb1717b6a7a143689c47040f3426e791b",
+    "prototypes/arc/arc.hpp": "68d99b6a76623631680c8bdbb0fad4628645ff15320818ee2840e7ad3b1b19ba",
+    "prototypes/arc/replay_arc.cpp": "37def4d887934525ff3abfec4c4910ac89a88fb51045e932fd554573f455772f",
+    "tests/trace_fields.py": "53a9c9f044716c80121f5b53b4d948b63981810bda9e702ad1e817874c16cf51",
+    "Dockerfile": "e64f02ea4eaf2fba293b23d093cc87e2cae009c3a65824f6b5fc90ecef51f566"
+  }
+}

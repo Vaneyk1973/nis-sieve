@@ -1,0 +1,3 @@
+[32m[INFO]  11-02-2026 21:29:59 cli_parser.c:545  (tid=126113725068608): trace path: /tmp/tmpgcgeexpt/zero_sizes.bin, trace_type ORACLE_GENERAL_TRACE, ofilepath zero_sizes.bin.cachesim, 1 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, arc, ignore object size
+[0m/tmp/tmpgcgeexpt/zero_sizes.bin ARC cache size        8,             6144 req, miss ratio 0.9411, throughput 20.55 MQPS
+EXACT requests=6144 misses=5782

@@ -20,6 +20,18 @@ RUN git init /opt/sieve-reference \
     && cmake --build /opt/sieve-reference/libCacheSim/_build \
         --target cachesim --parallel 2
 
+# Expose existing integer counters; the reference cache algorithms stay unchanged.
+RUN python3 - <<'PY'
+from pathlib import Path
+p = Path('/opt/sieve-reference/libCacheSim/libCacheSim/bin/cachesim/sim.c')
+source = p.read_text()
+needle = 'printf("%s", output_str);'
+assert source.count(needle) == 1
+extra = r'printf("EXACT requests=%llu misses=%llu\n", (unsigned long long)req_cnt, (unsigned long long)miss_cnt);'
+p.write_text(source.replace(needle, needle + '\n  ' + extra))
+PY
+RUN cmake --build /opt/sieve-reference/libCacheSim/_build --target cachesim --parallel 2
+
 ENV PATH="/opt/venv/bin:/opt/sieve-reference/libCacheSim/_build/bin:${PATH}"
 
 WORKDIR /workspace

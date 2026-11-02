@@ -1,0 +1,18 @@
+arc 1 /tmp/tmpgcgeexpt/loop_9.bin ARC cache size        1,             4608 req, miss ratio 1.0000, throughput 26.96 MQPS
+arc 1 EXACT requests=4608 misses=4608
+arc 2 /tmp/tmpgcgeexpt/loop_9.bin ARC cache size        2,             4608 req, miss ratio 1.0000, throughput 31.12 MQPS
+arc 2 EXACT requests=4608 misses=4608
+arc 3 /tmp/tmpgcgeexpt/loop_9.bin ARC cache size        3,             4608 req, miss ratio 1.0000, throughput 24.62 MQPS
+arc 3 EXACT requests=4608 misses=4608
+arc 7 /tmp/tmpgcgeexpt/loop_9.bin ARC cache size        7,             4608 req, miss ratio 1.0000, throughput 30.68 MQPS
+arc 7 EXACT requests=4608 misses=4608
+arc 8 /tmp/tmpgcgeexpt/loop_9.bin ARC cache size        8,             4608 req, miss ratio 1.0000, throughput 30.92 MQPS
+arc 8 EXACT requests=4608 misses=4608
+arc 9 /tmp/tmpgcgeexpt/loop_9.bin ARC cache size        9,             4608 req, miss ratio 0.0020, throughput 37.75 MQPS
+arc 9 EXACT requests=4608 misses=9
+arc 16 /tmp/tmpgcgeexpt/loop_9.bin ARC cache size       16,             4608 req, miss ratio 0.0020, throughput 74.34 MQPS
+arc 16 EXACT requests=4608 misses=9
+arc 64 /tmp/tmpgcgeexpt/loop_9.bin ARC cache size       64,             4608 req, miss ratio 0.0020, throughput 75.50 MQPS
+arc 64 EXACT requests=4608 misses=9
+arc 129 /tmp/tmpgcgeexpt/loop_9.bin ARC cache size      129,             4608 req, miss ratio 0.0020, throughput 74.05 MQPS
+arc 129 EXACT requests=4608 misses=9

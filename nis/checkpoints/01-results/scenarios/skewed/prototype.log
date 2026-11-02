@@ -1,0 +1,10 @@
+requests 8192 unique 128
+capacity 1 misses 7730 miss_ratio 0.9436 evictions 7729 ghost_hits 890 list_ops 17011
+capacity 2 misses 6916 miss_ratio 0.8442 evictions 6914 ghost_hits 893 list_ops 20500
+capacity 3 misses 6340 miss_ratio 0.7739 evictions 6337 ghost_hits 890 list_ops 19776
+capacity 7 misses 5073 miss_ratio 0.6193 evictions 5066 ghost_hits 923 list_ops 17393
+capacity 8 misses 4865 miss_ratio 0.5939 evictions 4857 ghost_hits 944 list_ops 16954
+capacity 9 misses 4684 miss_ratio 0.5718 evictions 4675 ghost_hits 937 list_ops 16596
+capacity 16 misses 3793 miss_ratio 0.4630 evictions 3777 ghost_hits 979 list_ops 14751
+capacity 64 misses 1531 miss_ratio 0.1869 evictions 1467 ghost_hits 1403 list_ops 9659
+capacity 129 misses 128 miss_ratio 0.0156 evictions 0 ghost_hits 0 list_ops 8192

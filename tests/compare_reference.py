@@ -1,5 +1,20 @@
+import math
 import re
 import sys
+
+
+def validate_row(requests, row):
+    if requests <= 0:
+        raise ValueError("request count must be positive")
+    if "misses" in row and not 0 <= row["misses"] <= requests:
+        raise ValueError("miss count is outside the request count")
+    if "ratio" in row:
+        ratio = float(row["ratio"])
+        if not math.isfinite(ratio) or not 0 <= ratio <= 1:
+            raise ValueError("invalid miss ratio")
+        # The CLI renders ratios to four decimal places.
+        if "misses" in row and abs(ratio - row["misses"] / requests) > 0.000050000001:
+            raise ValueError("miss ratio disagrees with integer counters")
 
 
 def read_prototype(path):
@@ -7,10 +22,22 @@ def read_prototype(path):
     rows = {}
     with open(path) as stream:
         for line in stream:
-            if match := re.fullmatch(r"requests (\d+) unique \d+\n?", line):
+            if match := re.fullmatch(r"requests (\d+) unique (\d+)\n?", line):
+                if requests is not None:
+                    raise ValueError("duplicate prototype header")
                 requests = int(match[1])
-            elif match := re.match(r"capacity (\d+) misses \d+ miss_ratio ([0-9.]+) ", line):
-                rows[int(match[1])] = match[2]
+                if not 0 < int(match[2]) <= requests:
+                    raise ValueError("invalid unique object count")
+            elif match := re.match(r"capacity (\d+) misses (\d+) miss_ratio (\S+)(?:\s|$)", line):
+                capacity = int(match[1])
+                if capacity <= 0 or capacity in rows:
+                    raise ValueError("invalid or duplicate prototype capacity")
+                rows[capacity] = {"misses": int(match[2]), "ratio": match[3]}
+            elif line.startswith(("requests ", "capacity ")):
+                raise ValueError("malformed prototype record")
+    if requests is not None:
+        for row in rows.values():
+            validate_row(requests, row)
     return requests, rows
 
 
@@ -18,11 +45,26 @@ def read_reference(path, policy):
     rows = {}
     with open(path) as stream:
         for line in stream:
-            match = re.match(
-                rf"{policy} (\d+) .*?(\d+) req, miss ratio ([0-9.]+)", line, re.IGNORECASE
+            summary = re.match(
+                rf"{policy} (\d+) .*?(\d+) req, miss ratio ([^,\s]+)", line, re.IGNORECASE
             )
+            exact = re.match(
+                rf"{policy} (\d+) EXACT requests=(\d+) misses=(\d+)", line, re.IGNORECASE
+            )
+            match = exact or summary
             if match:
-                rows[int(match[1])] = (int(match[2]), match[3])
+                capacity, requests = int(match[1]), int(match[2])
+                row = rows.setdefault(capacity, {"requests": requests})
+                if capacity <= 0 or row["requests"] != requests:
+                    raise ValueError(f"inconsistent reference request counts at {capacity}")
+                field = "misses" if exact else "ratio"
+                if field in row:
+                    raise ValueError(f"duplicate reference {field} at {capacity}")
+                row[field] = int(match[3]) if exact else match[3]
+            elif re.match(rf"{policy} \d+ .*?(?:EXACT| req, miss ratio)", line, re.IGNORECASE):
+                raise ValueError("malformed reference record")
+    for row in rows.values():
+        validate_row(row["requests"], row)
     return rows
 
 
@@ -37,13 +79,14 @@ def main(prototype_path, reference_path):
     if prototype.keys() != reference.keys():
         errors.append(f"capacities differ: {sorted(prototype)} and {sorted(reference)}")
     for capacity in sorted(prototype.keys() & reference.keys()):
-        reference_requests, reference_ratio = reference[capacity]
-        status = "ok" if prototype[capacity] == reference_ratio else "MISMATCH"
-        print(f"{status} capacity {capacity}: prototype {prototype[capacity]}, "
-              f"reference {reference_ratio}")
+        row = reference[capacity]
+        field = "misses" if "misses" in row else "ratio"
+        got, expected = prototype[capacity][field], row[field]
+        status = "ok" if got == expected else "MISMATCH"
+        print(f"{status} capacity {capacity}: {field}, prototype {got}, reference {expected}")
         if status != "ok":
-            errors.append(f"miss ratio differs at capacity {capacity}")
-        if reference_requests != requests:
+            errors.append(f"{field} differs at capacity {capacity}")
+        if row["requests"] != requests:
             errors.append(f"requests differ at capacity {capacity}")
     for error in errors:
         print(f"ERROR {error}")

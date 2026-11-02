@@ -33,8 +33,10 @@ cd "$(mktemp -d)"
 for policy in fifo lru sieve arc; do
     for capacity in "${CAPACITIES[@]}"; do
         line="$(cachesim "$PREFIX" oracleGeneral "$policy" "$capacity" --ignore-obj-size 1 2>&1 |
-            sed 's/\x1b\[[0-9;]*m//g' | grep 'miss ratio' | sed -E 's/, throughput.*//; s#^.*/##')"
-        echo "$policy $capacity $line"
+            sed 's/\x1b\[[0-9;]*m//g' | grep -E 'req, miss ratio|^EXACT' | sed -E 's/, throughput.*//; s#^.*/##')"
+        while IFS= read -r result; do
+            echo "$policy $capacity $result"
+        done <<< "$line"
     done
 done | tee "$OUT/reference.txt"
 

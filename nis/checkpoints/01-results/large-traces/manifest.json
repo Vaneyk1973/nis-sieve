@@ -1,0 +1,72 @@
+{
+  "traces": [
+    {
+      "trace": "meta_reag",
+      "source_url": "https://ftp.pdl.cmu.edu/pub/datasets/twemcacheWorkload/cacheDatasets/metaCDN/meta_reag.oracleGeneral.zst",
+      "requests": 10000000,
+      "unique": 3214569,
+      "prefix_sha256": "8fe7c66cf5df50bc3dd638eb7e459f295ca2c88ef189b939d511bc0b1ffef4f5",
+      "capacities": [
+        3214,
+        9643,
+        32145,
+        96437,
+        321456,
+        964370
+      ],
+      "warmup_requests": 0,
+      "object_size": 1,
+      "exact_arc_matches": 6,
+      "reference_revision": "0861f8261c37b8286a70449a1defb5a4749c72d2"
+    },
+    {
+      "trace": "twitter10",
+      "source_url": "https://ftp.pdl.cmu.edu/pub/datasets/twemcacheWorkload/cacheDatasets/twitter/cluster10.oracleGeneral.zst",
+      "requests": 10000000,
+      "unique": 5000176,
+      "prefix_sha256": "65b767e8027236c99acae1180d5328714d6624f7c0ca6b4c3885adbbe600717b",
+      "capacities": [
+        5000,
+        15000,
+        50001,
+        150005,
+        500017,
+        1500052
+      ],
+      "warmup_requests": 0,
+      "object_size": 1,
+      "exact_arc_matches": 6,
+      "reference_revision": "0861f8261c37b8286a70449a1defb5a4749c72d2"
+    },
+    {
+      "trace": "wiki2019t",
+      "source_url": "https://ftp.pdl.cmu.edu/pub/datasets/twemcacheWorkload/cacheDatasets/wiki/wiki_2019t.oracleGeneral.zst",
+      "requests": 10000000,
+      "unique": 2798618,
+      "prefix_sha256": "6906cf18f71a82b72ef116c200749ab9dc5780017042f023b9b0bd9c8926ff67",
+      "capacities": [
+        2798,
+        8395,
+        27986,
+        83958,
+        279861,
+        839585
+      ],
+      "warmup_requests": 0,
+      "object_size": 1,
+      "exact_arc_matches": 6,
+      "reference_revision": "0861f8261c37b8286a70449a1defb5a4749c72d2"
+    }
+  ],
+  "source_sha256": {
+    "Dockerfile": "e64f02ea4eaf2fba293b23d093cc87e2cae009c3a65824f6b5fc90ecef51f566",
+    "prototypes/arc/arc.hpp": "68d99b6a76623631680c8bdbb0fad4628645ff15320818ee2840e7ad3b1b19ba",
+    "prototypes/arc/replay_arc.cpp": "37def4d887934525ff3abfec4c4910ac89a88fb51045e932fd554573f455772f",
+    "tests/check_large_traces.py": "670770b470b0e0d51b0c9a97c739b733d1a55e33f92fcac71eb08577abf8f7df",
+    "tests/fetch_trace_prefix.sh": "576bd4e3b3d7d6ffee3675676b06b608eb35f956b4057e2accf0920544d01e49",
+    "tests/compare_reference.py": "788f6a1a98d75185844b8483496c0f9cb1717b6a7a143689c47040f3426e791b"
+  },
+  "maximum_child_rss_kib": 610560,
+  "reference_instrumentation": "Extra printf of existing request/miss counters; algorithms unchanged",
+  "download_scope": "Only the first 10 million records; hashes refer to decompressed prefixes"
+}

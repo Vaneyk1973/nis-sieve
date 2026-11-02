@@ -1,0 +1,18 @@
+arc 1 /tmp/tmpgcgeexpt/unique_scan.bin ARC cache size        1,             4096 req, miss ratio 1.0000, throughput 4.28 MQPS
+arc 1 EXACT requests=4096 misses=4096
+arc 2 /tmp/tmpgcgeexpt/unique_scan.bin ARC cache size        2,             4096 req, miss ratio 1.0000, throughput 6.14 MQPS
+arc 2 EXACT requests=4096 misses=4096
+arc 3 /tmp/tmpgcgeexpt/unique_scan.bin ARC cache size        3,             4096 req, miss ratio 1.0000, throughput 1.89 MQPS
+arc 3 EXACT requests=4096 misses=4096
+arc 7 /tmp/tmpgcgeexpt/unique_scan.bin ARC cache size        7,             4096 req, miss ratio 1.0000, throughput 2.23 MQPS
+arc 7 EXACT requests=4096 misses=4096
+arc 8 /tmp/tmpgcgeexpt/unique_scan.bin ARC cache size        8,             4096 req, miss ratio 1.0000, throughput 6.08 MQPS
+arc 8 EXACT requests=4096 misses=4096
+arc 9 /tmp/tmpgcgeexpt/unique_scan.bin ARC cache size        9,             4096 req, miss ratio 1.0000, throughput 3.31 MQPS
+arc 9 EXACT requests=4096 misses=4096
+arc 16 /tmp/tmpgcgeexpt/unique_scan.bin ARC cache size       16,             4096 req, miss ratio 1.0000, throughput 6.58 MQPS
+arc 16 EXACT requests=4096 misses=4096
+arc 64 /tmp/tmpgcgeexpt/unique_scan.bin ARC cache size       64,             4096 req, miss ratio 1.0000, throughput 3.05 MQPS
+arc 64 EXACT requests=4096 misses=4096
+arc 129 /tmp/tmpgcgeexpt/unique_scan.bin ARC cache size      129,             4096 req, miss ratio 1.0000, throughput 6.06 MQPS
+arc 129 EXACT requests=4096 misses=4096

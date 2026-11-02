@@ -1,0 +1,4 @@
+[32m[INFO]  11-02-2026 21:30:17 cli_parser.c:545  (tid=137205607990592): trace path: /workspace/data/meta_reag-10m.bin, trace_type ORACLE_GENERAL_TRACE, ofilepath meta_reag-10m.bin.cachesim, 1 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
+[0m[32m[INFO]  11-02-2026 21:30:17    sim.c:49   (tid=137205607990592): meta_reag-10m.bin LRU 24.00 hour: 5518404 requests, miss ratio 0.4847, interval miss ratio 0.4847
+[0m/workspace/data/meta_reag-10m.bin LRU cache size     3KiB,         10000000 req, miss ratio 0.4684, throughput 12.05 MQPS
+EXACT requests=10000000 misses=4684173

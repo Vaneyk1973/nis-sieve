@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import re
 import shlex
+import shutil
 import subprocess
 import tempfile
 
@@ -110,7 +111,86 @@ with tempfile.TemporaryDirectory() as directory:
     for reference_file in ("other.txt", "length.txt", "capacity.txt", "no_arc.txt"):
         assert_fails("python3", "-I", compare, "prototype.txt", reference_file)
     assert_fails("python3", "-I", compare, "no_results.txt", "same.txt")
+    Path("exact_same.txt").write_text(
+        "arc 4 EXACT requests=10 misses=6\n"
+    )
+    run("python3", "-I", compare, "prototype.txt", "exact_same.txt")
+    Path("large_prototype.txt").write_text(
+        "requests 100000 unique 100\n"
+        "capacity 4 misses 60000 miss_ratio 0.6000 evictions 1 ghost_hits 0 list_ops 1\n"
+    )
+    Path("rounded_collision.txt").write_text(
+        "arc 4 x ARC cache size 4, 100000 req, miss ratio 0.6000\n"
+        "arc 4 EXACT requests=100000 misses=60001\n"
+    )
+    assert_fails("python3", "-I", compare, "large_prototype.txt", "rounded_collision.txt")
+    invalid_prototypes = (
+        "requests 0 unique 0\ncapacity 4 misses 0 miss_ratio 0.0000 evictions 0\n",
+        "requests 10 unique 11\ncapacity 4 misses 6 miss_ratio 0.6000 evictions 0\n",
+        "requests 10 unique 5\ncapacity 4 misses 20 miss_ratio 2.0000 evictions 0\n",
+        "requests 10 unique 5\ncapacity 4 misses 6 miss_ratio 0.2000 evictions 0\n",
+        "requests 10 unique 5\ncapacity 4 misses 6 miss_ratio nan evictions 0\n",
+        "requests 10 unique 5\ncapacity 4 misses -1 miss_ratio 0.6000 evictions 0\n",
+        Path("prototype.txt").read_text() * 2,
+        Path("prototype.txt").read_text() + "capacity 4 misses 6 miss_ratio 0.6000 evictions 0\n",
+    )
+    for text in invalid_prototypes:
+        Path("invalid-prototype.txt").write_text(text)
+        assert_fails("python3", "-I", compare, "invalid-prototype.txt", "exact_same.txt")
+    invalid_references = (
+        "arc 4 EXACT requests=10 misses=20\n",
+        "arc 4 EXACT requests=10 misses=-1\n",
+        "arc 4 x ARC cache size 4, 10 req, miss ratio nan\n",
+        "arc 4 x ARC cache size 4, 10 req, miss ratio 2.0000\n",
+        "arc 4 x ARC cache size 4, 10 req, miss ratio 0.2000\narc 4 EXACT requests=10 misses=6\n",
+        "arc 4 x ARC cache size 4, 11 req, miss ratio 0.6000\narc 4 EXACT requests=10 misses=6\n",
+        Path("exact_same.txt").read_text() * 2,
+        Path("same.txt").read_text() * 2,
+    )
+    for text in invalid_references:
+        Path("invalid-reference.txt").write_text(text)
+        assert_fails("python3", "-I", compare, "prototype.txt", "invalid-reference.txt")
+    for requests, unique, misses, ratio in ((10, 5, 20, "2.0000"), (0, 0, 0, "0.0000")):
+        Path("invalid-prototype.txt").write_text(
+            f"requests {requests} unique {unique}\n"
+            f"capacity 4 misses {misses} miss_ratio {ratio} evictions 0\n"
+        )
+        Path("invalid-reference.txt").write_text(f"arc 4 EXACT requests={requests} misses={misses}\n")
+        assert_fails("python3", "-I", compare, "invalid-prototype.txt", "invalid-reference.txt")
     print("PASS comparison fails when prototype and reference differ", flush=True)
+
+    Path("prefix-source.bin").write_bytes(record * 4)
+    run("zstd", "-q", "prefix-source.bin", "-o", "prefix-source.zst")
+    fetch = str(repository / "tests/fetch_trace_prefix.sh")
+    url = Path("prefix-source.zst").resolve().as_uri()
+    expected = hashlib.sha256(record * 2).hexdigest()
+    run("bash", fetch, url, "prefix.bin", "2", expected)
+    assert Path("prefix.bin").read_bytes() == record * 2
+    assert_fails("bash", fetch, url, "bad-hash.bin", "2", "0" * 64)
+    assert not Path("bad-hash.bin").exists()
+    assert_fails("bash", fetch, url, "short.bin", "5", expected)
+    assert not Path("short.bin").exists()
+    print("PASS prefix download checks length/hash and does not publish invalid data", flush=True)
+
+    sandbox = Path("cached-input-check").resolve()
+    for relative in (
+        "Dockerfile", "tests/check_large_traces.py", "tests/fetch_trace_prefix.sh",
+        "tests/compare_reference.py", "prototypes/arc/arc.hpp", "prototypes/arc/replay_arc.cpp",
+    ):
+        target = sandbox / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(repository / relative, target)
+    cached = sandbox / "data/meta_reag-10m.bin"
+    cached.parent.mkdir()
+    with cached.open("wb") as stream:
+        stream.truncate(10_000_000 * 24)
+    completion = sandbox / "nis/checkpoints/01-results/large-traces/manifest.json"
+    completion.parent.mkdir(parents=True)
+    completion.write_text('{"stale": true}')
+    assert_fails("python3", str(sandbox / "tests/check_large_traces.py"))
+    assert cached.stat().st_size == 10_000_000 * 24
+    assert not completion.exists()
+    print("PASS corrupted cache is rejected and stale completion manifest is removed", flush=True)
 
     sample = reference / "libCacheSim/data/twitter_cluster52.csv"
     print(f"Bundled CSV SHA256: {hashlib.sha256(sample.read_bytes()).hexdigest()}", flush=True)

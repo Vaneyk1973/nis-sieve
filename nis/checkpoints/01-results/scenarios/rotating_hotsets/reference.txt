@@ -1,0 +1,18 @@
+arc 1 /tmp/tmpgcgeexpt/rotating_hotsets.bin ARC cache size        1,             8192 req, miss ratio 0.9397, throughput 14.05 MQPS
+arc 1 EXACT requests=8192 misses=7698
+arc 2 /tmp/tmpgcgeexpt/rotating_hotsets.bin ARC cache size        2,             8192 req, miss ratio 0.8757, throughput 21.34 MQPS
+arc 2 EXACT requests=8192 misses=7174
+arc 3 /tmp/tmpgcgeexpt/rotating_hotsets.bin ARC cache size        3,             8192 req, miss ratio 0.8154, throughput 16.61 MQPS
+arc 3 EXACT requests=8192 misses=6680
+arc 7 /tmp/tmpgcgeexpt/rotating_hotsets.bin ARC cache size        7,             8192 req, miss ratio 0.5734, throughput 17.66 MQPS
+arc 7 EXACT requests=8192 misses=4697
+arc 8 /tmp/tmpgcgeexpt/rotating_hotsets.bin ARC cache size        8,             8192 req, miss ratio 0.5111, throughput 26.43 MQPS
+arc 8 EXACT requests=8192 misses=4187
+arc 9 /tmp/tmpgcgeexpt/rotating_hotsets.bin ARC cache size        9,             8192 req, miss ratio 0.4508, throughput 27.87 MQPS
+arc 9 EXACT requests=8192 misses=3693
+arc 16 /tmp/tmpgcgeexpt/rotating_hotsets.bin ARC cache size       16,             8192 req, miss ratio 0.0168, throughput 49.94 MQPS
+arc 16 EXACT requests=8192 misses=138
+arc 64 /tmp/tmpgcgeexpt/rotating_hotsets.bin ARC cache size       64,             8192 req, miss ratio 0.0164, throughput 56.89 MQPS
+arc 64 EXACT requests=8192 misses=134
+arc 129 /tmp/tmpgcgeexpt/rotating_hotsets.bin ARC cache size      129,             8192 req, miss ratio 0.0156, throughput 40.95 MQPS
+arc 129 EXACT requests=8192 misses=128

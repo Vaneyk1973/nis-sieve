@@ -1,0 +1,7 @@
+ok capacity 5000: misses, prototype 5000193, reference 5000193
+ok capacity 15000: misses, prototype 5000182, reference 5000182
+ok capacity 50001: misses, prototype 5000185, reference 5000185
+ok capacity 150005: misses, prototype 5000185, reference 5000185
+ok capacity 500017: misses, prototype 5000182, reference 5000182
+ok capacity 1500052: misses, prototype 5000185, reference 5000185
+PASS prototype matches reference

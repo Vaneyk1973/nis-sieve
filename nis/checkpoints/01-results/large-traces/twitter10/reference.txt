@@ -1,0 +1,48 @@
+fifo 5000 /workspace/data/twitter10-10m.bin FIFO cache size     5KiB,         10000000 req, miss ratio 0.5000, throughput 11.77 MQPS
+fifo 5000 EXACT requests=10000000 misses=5000176
+fifo 15000 /workspace/data/twitter10-10m.bin FIFO cache size    15KiB,         10000000 req, miss ratio 0.5000, throughput 9.64 MQPS
+fifo 15000 EXACT requests=10000000 misses=5000176
+fifo 50001 /workspace/data/twitter10-10m.bin FIFO cache size    49KiB,         10000000 req, miss ratio 0.5000, throughput 8.49 MQPS
+fifo 50001 EXACT requests=10000000 misses=5000176
+fifo 150005 /workspace/data/twitter10-10m.bin FIFO cache size   146KiB,         10000000 req, miss ratio 0.5000, throughput 8.38 MQPS
+fifo 150005 EXACT requests=10000000 misses=5000176
+fifo 500017 /workspace/data/twitter10-10m.bin FIFO cache size   488KiB,         10000000 req, miss ratio 0.5000, throughput 8.04 MQPS
+fifo 500017 EXACT requests=10000000 misses=5000176
+fifo 1500052 /workspace/data/twitter10-10m.bin FIFO cache size     1MiB,         10000000 req, miss ratio 0.5000, throughput 7.43 MQPS
+fifo 1500052 EXACT requests=10000000 misses=5000176
+lru 5000 /workspace/data/twitter10-10m.bin LRU cache size     5KiB,         10000000 req, miss ratio 0.5000, throughput 10.45 MQPS
+lru 5000 EXACT requests=10000000 misses=5000176
+lru 15000 /workspace/data/twitter10-10m.bin LRU cache size    15KiB,         10000000 req, miss ratio 0.5000, throughput 9.70 MQPS
+lru 15000 EXACT requests=10000000 misses=5000176
+lru 50001 /workspace/data/twitter10-10m.bin LRU cache size    49KiB,         10000000 req, miss ratio 0.5000, throughput 7.34 MQPS
+lru 50001 EXACT requests=10000000 misses=5000176
+lru 150005 /workspace/data/twitter10-10m.bin LRU cache size   146KiB,         10000000 req, miss ratio 0.5000, throughput 7.83 MQPS
+lru 150005 EXACT requests=10000000 misses=5000176
+lru 500017 /workspace/data/twitter10-10m.bin LRU cache size   488KiB,         10000000 req, miss ratio 0.5000, throughput 7.44 MQPS
+lru 500017 EXACT requests=10000000 misses=5000176
+lru 1500052 /workspace/data/twitter10-10m.bin LRU cache size     1MiB,         10000000 req, miss ratio 0.5000, throughput 7.23 MQPS
+lru 1500052 EXACT requests=10000000 misses=5000176
+sieve 5000 /workspace/data/twitter10-10m.bin Sieve cache size     5KiB,         10000000 req, miss ratio 0.5003, throughput 9.48 MQPS
+sieve 5000 EXACT requests=10000000 misses=5002995
+sieve 15000 /workspace/data/twitter10-10m.bin Sieve cache size    15KiB,         10000000 req, miss ratio 0.5001, throughput 9.41 MQPS
+sieve 15000 EXACT requests=10000000 misses=5001172
+sieve 50001 /workspace/data/twitter10-10m.bin Sieve cache size    49KiB,         10000000 req, miss ratio 0.5000, throughput 7.35 MQPS
+sieve 50001 EXACT requests=10000000 misses=5000447
+sieve 150005 /workspace/data/twitter10-10m.bin Sieve cache size   146KiB,         10000000 req, miss ratio 0.5000, throughput 7.71 MQPS
+sieve 150005 EXACT requests=10000000 misses=5000293
+sieve 500017 /workspace/data/twitter10-10m.bin Sieve cache size   488KiB,         10000000 req, miss ratio 0.5000, throughput 7.52 MQPS
+sieve 500017 EXACT requests=10000000 misses=5000202
+sieve 1500052 /workspace/data/twitter10-10m.bin Sieve cache size     1MiB,         10000000 req, miss ratio 0.5000, throughput 7.00 MQPS
+sieve 1500052 EXACT requests=10000000 misses=5000185
+arc 5000 /workspace/data/twitter10-10m.bin ARC cache size     5KiB,         10000000 req, miss ratio 0.5000, throughput 9.35 MQPS
+arc 5000 EXACT requests=10000000 misses=5000193
+arc 15000 /workspace/data/twitter10-10m.bin ARC cache size    15KiB,         10000000 req, miss ratio 0.5000, throughput 7.88 MQPS
+arc 15000 EXACT requests=10000000 misses=5000182
+arc 50001 /workspace/data/twitter10-10m.bin ARC cache size    49KiB,         10000000 req, miss ratio 0.5000, throughput 6.66 MQPS
+arc 50001 EXACT requests=10000000 misses=5000185
+arc 150005 /workspace/data/twitter10-10m.bin ARC cache size   146KiB,         10000000 req, miss ratio 0.5000, throughput 7.14 MQPS
+arc 150005 EXACT requests=10000000 misses=5000185
+arc 500017 /workspace/data/twitter10-10m.bin ARC cache size   488KiB,         10000000 req, miss ratio 0.5000, throughput 6.48 MQPS
+arc 500017 EXACT requests=10000000 misses=5000182
+arc 1500052 /workspace/data/twitter10-10m.bin ARC cache size     1MiB,         10000000 req, miss ratio 0.5000, throughput 7.09 MQPS
+arc 1500052 EXACT requests=10000000 misses=5000185

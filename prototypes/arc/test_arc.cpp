@@ -30,7 +30,8 @@ void TestKnownExample() {
                                         false, false, false, true,  true};
     bool all_match = true;
     for (std::size_t i = 0; i < trace.size(); ++i) {
-        all_match = all_match && cache.Access(trace[i]) == expected[i];
+        const bool hit = cache.Access(trace[i]);
+        all_match = (hit == expected[i]) && all_match;
     }
     using W = ArcCache::Where;
     Expect(all_match, "hit and miss sequence on the 11-request example");
@@ -70,12 +71,43 @@ void TestCapacityOne() {
            "capacity 1 holds one object");
 }
 
+void TestBothGhostLists() {
+    ArcCache cache(2);
+    for (const auto id : {1, 2, 1, 3}) {
+        cache.Access(id);
+    }
+    using W = ArcCache::Where;
+    Expect(Same(cache.Items(W::B1), {2}), "B1 remembers the evicted recent object");
+    Expect(!cache.Access(2), "B1 hit is a resident miss");
+    Expect(cache.Target() == 1.0, "B1 feedback increases T1 target");
+    Expect(Same(cache.Items(W::B2), {1}), "replacement moves the frequent object to B2");
+    Expect(!cache.Access(1), "B2 hit is a resident miss");
+    Expect(cache.Target() == 0.0, "B2 feedback decreases T1 target");
+    Expect(Same(cache.Items(W::T2), {2, 1}) && Same(cache.Items(W::B1), {3}),
+           "ghost feedback leaves the expected resident and ghost lists");
+    Expect(cache.GetStats().ghost_hits == 2 && cache.GetStats().misses == 5 &&
+               cache.GetStats().hits == 1, "both ghost hits count as misses");
+    Expect(cache.GetStats().evictions == 3, "ghost replacement counts three evictions");
+}
+
+void TestZeroCapacity() {
+    bool rejected = false;
+    try {
+        ArcCache invalid(0);
+    } catch (const std::invalid_argument&) {
+        rejected = true;
+    }
+    Expect(rejected, "zero capacity is rejected");
+}
+
 }  // namespace
 
 int main() {
     TestKnownExample();
     TestLoopFitsInCache();
     TestCapacityOne();
+    TestBothGhostLists();
+    TestZeroCapacity();
     std::cout << (failures == 0 ? "all checks passed" : "checks failed") << '\n';
     return failures == 0 ? EXIT_SUCCESS : EXIT_FAILURE;
 }
