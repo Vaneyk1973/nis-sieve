@@ -1,0 +1,10 @@
+twitter_cluster10 0M U/N=0.50001 lru=0.50001 sieve=0.50005 arc=0.50001 excess=0.000 spread=0.004 suitable=False exact=True
+twitter_cluster10 5M U/N=0.50003 lru=0.50003 sieve=0.50010 arc=0.50003 excess=0.000 spread=0.007 suitable=False exact=True
+twitter_cluster10 10M U/N=0.50002 lru=0.50002 sieve=0.50012 arc=0.50002 excess=0.000 spread=0.010 suitable=False exact=True
+twitter_cluster10 20M U/N=0.50003 lru=0.50003 sieve=0.50009 arc=0.50003 excess=0.000 spread=0.006 suitable=False exact=True
+twitter_cluster26 0M U/N=0.07895 lru=0.48088 sieve=0.48522 arc=0.40332 excess=32.437 spread=8.190 suitable=True exact=True
+twitter_cluster50 0M U/N=0.16153 lru=0.77945 sieve=0.78494 arc=0.75193 excess=59.040 spread=3.301 suitable=True exact=True
+twitter_cluster53 0M U/N=0.11066 lru=0.51528 sieve=0.45875 arc=0.45325 excess=34.260 spread=9.550 suitable=True exact=True
+twitter_cluster45 0M U/N=0.43164 lru=0.55146 sieve=0.54855 arc=0.55038 excess=11.691 spread=1.022 suitable=True exact=True
+twitter_cluster3 0M U/N=0.05169 lru=0.29954 sieve=0.25753 arc=0.26314 excess=20.583 spread=7.886 suitable=True exact=True
+meta_kv_202401 0M U/N=0.17198 lru=0.37237 sieve=0.34097 arc=0.34774 excess=16.899 spread=3.907 suitable=True exact=False

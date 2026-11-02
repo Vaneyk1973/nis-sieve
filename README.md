@@ -86,6 +86,19 @@ FIFO/LRU/SIEVE/ARC: 90 запусков политик и 18 точных све
 правила измерения. Логи эталона содержат целые счётчики; старые логи без `EXACT`
 можно читать прежним компаратором, но большой сценарий требует точные счётчики.
 
+## Обзор KV-трасс
+
+Сценарий сравнивает окна `cluster10` и другие KV-трассы, из которых выбрана основная
+`cluster50`. Нужна сеть, файлы удаляются после анализа, результаты сохраняются в
+[kv-survey](nis/checkpoints/01-results/kv-survey):
+
+```sh
+docker run --rm --cpus 2 --memory 900m --memory-swap 900m \
+  --user "$(id -u):$(id -g)" \
+  --mount "type=bind,src=$PWD,dst=/workspace" \
+  nis-sieve:dev python3 -u tests/survey_kv_traces.py
+```
+
 ## Проверки разных сценариев
 
 После сборки образа можно отдельно запустить набор без скачивания данных:
@@ -132,4 +145,5 @@ docker run --rm --network none --cpus 2 --memory 2g \
 - [Проверка трёх больших трасс](tests/check_large_traces.py) и
   [загрузка проверенного префикса](tests/fetch_trace_prefix.sh).
 - [Разнообразные синтетические сценарии](tests/check_scenarios.py).
+- [Обзор и выбор KV-трассы](tests/survey_kv_traces.py).
 - [Сохранённые результаты проверок](nis/checkpoints/01-results).
