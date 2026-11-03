@@ -8,7 +8,6 @@ expected="$4"
 part=$(mktemp "${prefix}.part.XXXXXX")
 trap 'rm -f "$part"' EXIT
 
-# Stop after the requested prefix; curl/zstd may receive a broken pipe.
 set +o pipefail
 curl --silent --show-error --fail --location --retry 2 --connect-timeout 20 \
     --max-time 1800 "$url" | zstd -dc | head -c "$((requests * 24))" > "$part"

@@ -1,4 +1,4 @@
-[32m[INFO]  11-02-2026 21:32:16 cli_parser.c:545  (tid=138526570259776): trace path: /workspace/data/wiki2019t-10m.bin, trace_type ORACLE_GENERAL_TRACE, ofilepath wiki2019t-10m.bin.cachesim, 1 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
-[0m[32m[INFO]  11-02-2026 21:32:17    sim.c:49   (tid=138526570259776): wiki2019t-10m.bin Sieve 24.00 hour: 9826558 requests, miss ratio 0.8653, interval miss ratio 0.8653
-[0m/workspace/data/wiki2019t-10m.bin Sieve cache size     3KiB,         10000000 req, miss ratio 0.8654, throughput 6.98 MQPS
+[32m[INFO]  11-03-2026 13:17:48 cli_parser.c:545  (tid=124977955362112): trace path: /workspace/data/wiki2019t-10m.bin, trace_type ORACLE_GENERAL_TRACE, ofilepath wiki2019t-10m.bin.cachesim, 1 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
+[0m[32m[INFO]  11-03-2026 13:17:50    sim.c:49   (tid=124977955362112): wiki2019t-10m.bin Sieve 24.00 hour: 9826558 requests, miss ratio 0.8653, interval miss ratio 0.8653
+[0m/workspace/data/wiki2019t-10m.bin Sieve cache size     3KiB,         10000000 req, miss ratio 0.8654, throughput 5.26 MQPS
 EXACT requests=10000000 misses=8653794

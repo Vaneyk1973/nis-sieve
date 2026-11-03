@@ -15,8 +15,8 @@ CMake suite maintained and supported by Kitware (kitware.com/cmake).
 $ meson setup build
 The Meson build system
 Version: 1.12.1
-Source dir: /tmp/tmp6q8lxstd
-Build dir: /tmp/tmp6q8lxstd/build
+Source dir: /tmp/tmpwbzrka3h
+Build dir: /tmp/tmpwbzrka3h/build
 Build type: native build
 Project name: smoke
 Project version: undefined
@@ -29,96 +29,96 @@ Build targets in project: 1
 Found ninja-1.12.1 at /usr/bin/ninja
 
 $ meson compile -C build
-ninja: Entering directory `/tmp/tmp6q8lxstd/build'
+ninja: Entering directory `/tmp/tmpwbzrka3h/build'
 [1/2] Compiling C++ object smoke.p/main.cpp.o
 [2/2] Linking target smoke
 INFO: autodetecting backend as ninja
-INFO: calculating backend command to run: /usr/bin/ninja -C /tmp/tmp6q8lxstd/build
+INFO: calculating backend command to run: /usr/bin/ninja -C /tmp/tmpwbzrka3h/build
 
 $ ./build/smoke
 
 PASS GCC / Meson: compile and run
 $ cachesim /workspace/tests/data/basic.txt txt lru 1 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=123563242538304): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
+[32m[INFO]  11-03-2026 13:13:39 cli_parser.c:545  (tid=127782008694080): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
 [0m/workspace/tests/data/basic.txt LRU cache size        1,                6 req, miss ratio 1.0000, throughput 0.74 MQPS
 EXACT requests=6 misses=6
 
 PASS lru: capacity=1, misses=6/6
 $ cachesim /workspace/tests/data/basic.txt txt lru 2 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=128895766734144): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
-[0m/workspace/tests/data/basic.txt LRU cache size        2,                6 req, miss ratio 0.6667, throughput 1.01 MQPS
+[32m[INFO]  11-03-2026 13:13:39 cli_parser.c:545  (tid=125486767183168): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
+[0m/workspace/tests/data/basic.txt LRU cache size        2,                6 req, miss ratio 0.6667, throughput 0.97 MQPS
 EXACT requests=6 misses=4
 
 PASS lru: capacity=2, misses=4/6
 $ cachesim /workspace/tests/data/basic.txt txt lru 3 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=124280760345920): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
-[0m/workspace/tests/data/basic.txt LRU cache size        3,                6 req, miss ratio 0.5000, throughput 1.01 MQPS
+[32m[INFO]  11-03-2026 13:13:39 cli_parser.c:545  (tid=128904242419008): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
+[0m/workspace/tests/data/basic.txt LRU cache size        3,                6 req, miss ratio 0.5000, throughput 0.74 MQPS
 EXACT requests=6 misses=3
 
 PASS lru: capacity=3, misses=3/6
 $ cachesim /workspace/tests/data/basic.txt txt sieve 1 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=136784920352064): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
-[0m/workspace/tests/data/basic.txt Sieve cache size        1,                6 req, miss ratio 1.0000, throughput 1.01 MQPS
+[32m[INFO]  11-03-2026 13:13:39 cli_parser.c:545  (tid=125616146371904): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
+[0m/workspace/tests/data/basic.txt Sieve cache size        1,                6 req, miss ratio 1.0000, throughput 1.20 MQPS
 EXACT requests=6 misses=6
 
 PASS sieve: capacity=1, misses=6/6
 $ cachesim /workspace/tests/data/basic.txt txt sieve 2 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=136978853705024): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
-[0m/workspace/tests/data/basic.txt Sieve cache size        2,                6 req, miss ratio 0.6667, throughput 0.66 MQPS
+[32m[INFO]  11-03-2026 13:13:39 cli_parser.c:545  (tid=127539017200960): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
+[0m/workspace/tests/data/basic.txt Sieve cache size        2,                6 req, miss ratio 0.6667, throughput 0.97 MQPS
 EXACT requests=6 misses=4
 
 PASS sieve: capacity=2, misses=4/6
 $ cachesim /workspace/tests/data/basic.txt txt sieve 3 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=133619845305664): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
-[0m/workspace/tests/data/basic.txt Sieve cache size        3,                6 req, miss ratio 0.5000, throughput 1.01 MQPS
+[32m[INFO]  11-03-2026 13:13:39 cli_parser.c:545  (tid=128275895133504): trace path: /workspace/tests/data/basic.txt, trace_type PLAIN_TXT_TRACE, ofilepath basic.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
+[0m/workspace/tests/data/basic.txt Sieve cache size        3,                6 req, miss ratio 0.5000, throughput 0.87 MQPS
 EXACT requests=6 misses=3
 
 PASS sieve: capacity=3, misses=3/6
 $ cachesim /workspace/tests/data/order.txt txt lru 3 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=137545088607552): trace path: /workspace/tests/data/order.txt, trace_type PLAIN_TXT_TRACE, ofilepath order.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
-[0m/workspace/tests/data/order.txt LRU cache size        3,                8 req, miss ratio 0.5000, throughput 0.80 MQPS
+[32m[INFO]  11-03-2026 13:13:39 cli_parser.c:545  (tid=124032450852160): trace path: /workspace/tests/data/order.txt, trace_type PLAIN_TXT_TRACE, ofilepath order.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
+[0m/workspace/tests/data/order.txt LRU cache size        3,                8 req, miss ratio 0.5000, throughput 0.29 MQPS
 EXACT requests=8 misses=4
 
 PASS lru: capacity=3, misses=4/8
 $ cachesim /workspace/tests/data/order.txt txt sieve 3 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=135891449177408): trace path: /workspace/tests/data/order.txt, trace_type PLAIN_TXT_TRACE, ofilepath order.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
-[0m/workspace/tests/data/order.txt Sieve cache size        3,                8 req, miss ratio 0.6250, throughput 0.62 MQPS
+[32m[INFO]  11-03-2026 13:13:39 cli_parser.c:545  (tid=136220529489216): trace path: /workspace/tests/data/order.txt, trace_type PLAIN_TXT_TRACE, ofilepath order.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
+[0m/workspace/tests/data/order.txt Sieve cache size        3,                8 req, miss ratio 0.6250, throughput 1.12 MQPS
 EXACT requests=8 misses=5
 
 PASS sieve: capacity=3, misses=5/8
 $ cachesim /workspace/tests/data/order.txt txt arc 3 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=137814111331648): trace path: /workspace/tests/data/order.txt, trace_type PLAIN_TXT_TRACE, ofilepath order.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, arc, ignore object size
-[0m/workspace/tests/data/order.txt ARC cache size        3,                8 req, miss ratio 0.5000, throughput 0.80 MQPS
+[32m[INFO]  11-03-2026 13:13:39 cli_parser.c:545  (tid=137819507606848): trace path: /workspace/tests/data/order.txt, trace_type PLAIN_TXT_TRACE, ofilepath order.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, arc, ignore object size
+[0m/workspace/tests/data/order.txt ARC cache size        3,                8 req, miss ratio 0.5000, throughput 1.12 MQPS
 EXACT requests=8 misses=4
 
 PASS arc: capacity=3, misses=4/8
 $ cachesim /workspace/tests/data/example.txt txt lru 4 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=131379114947904): trace path: /workspace/tests/data/example.txt, trace_type PLAIN_TXT_TRACE, ofilepath example.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
-[0m/workspace/tests/data/example.txt LRU cache size        4,               11 req, miss ratio 0.8182, throughput 0.58 MQPS
+[32m[INFO]  11-03-2026 13:13:39 cli_parser.c:545  (tid=127935558243648): trace path: /workspace/tests/data/example.txt, trace_type PLAIN_TXT_TRACE, ofilepath example.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
+[0m/workspace/tests/data/example.txt LRU cache size        4,               11 req, miss ratio 0.8182, throughput 0.41 MQPS
 EXACT requests=11 misses=9
 
 PASS lru: capacity=4, misses=9/11
 $ cachesim /workspace/tests/data/example.txt txt sieve 4 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=133173046936896): trace path: /workspace/tests/data/example.txt, trace_type PLAIN_TXT_TRACE, ofilepath example.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
-[0m/workspace/tests/data/example.txt Sieve cache size        4,               11 req, miss ratio 0.6364, throughput 1.40 MQPS
+[32m[INFO]  11-03-2026 13:13:39 cli_parser.c:545  (tid=129484861814080): trace path: /workspace/tests/data/example.txt, trace_type PLAIN_TXT_TRACE, ofilepath example.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, ignore object size
+[0m/workspace/tests/data/example.txt Sieve cache size        4,               11 req, miss ratio 0.6364, throughput 1.36 MQPS
 EXACT requests=11 misses=7
 
 PASS sieve: capacity=4, misses=7/11
 $ cachesim /workspace/tests/data/example.txt txt arc 4 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=126411408356672): trace path: /workspace/tests/data/example.txt, trace_type PLAIN_TXT_TRACE, ofilepath example.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, arc, ignore object size
-[0m/workspace/tests/data/example.txt ARC cache size        4,               11 req, miss ratio 0.6364, throughput 1.21 MQPS
+[32m[INFO]  11-03-2026 13:13:40 cli_parser.c:545  (tid=134903136478528): trace path: /workspace/tests/data/example.txt, trace_type PLAIN_TXT_TRACE, ofilepath example.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, arc, ignore object size
+[0m/workspace/tests/data/example.txt ARC cache size        4,               11 req, miss ratio 0.6364, throughput 1.40 MQPS
 EXACT requests=11 misses=7
 
 PASS arc: capacity=4, misses=7/11
 $ cachesim unique.txt txt arc 10 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=128821533246784): trace path: unique.txt, trace_type PLAIN_TXT_TRACE, ofilepath unique.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, arc, ignore object size
-[0munique.txt ARC cache size       10,               20 req, miss ratio 1.0000, throughput 0.54 MQPS
+[32m[INFO]  11-03-2026 13:13:40 cli_parser.c:545  (tid=131134048806208): trace path: unique.txt, trace_type PLAIN_TXT_TRACE, ofilepath unique.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, arc, ignore object size
+[0munique.txt ARC cache size       10,               20 req, miss ratio 1.0000, throughput 0.00 MQPS
 EXACT requests=20 misses=20
 
 PASS arc: capacity=10, misses=20/20
 $ cachesim repeated.txt txt arc 10 --ignore-obj-size 1
-[32m[INFO]  11-02-2026 21:29:49 cli_parser.c:545  (tid=137549336679744): trace path: repeated.txt, trace_type PLAIN_TXT_TRACE, ofilepath repeated.txt.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, arc, ignore object size
-[0mrepeated.txt ARC cache size       10,               20 req, miss ratio 0.0500, throughput 1.78 MQPS
+[32m[INFO]  11-03-2026 13:13:40 cli_parser.c:545  (tid=125476723004736): trace path: repeated.txt, trace_type PLAIN_TXT_TRACE, ofilepath repeated.txt.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, arc, ignore object size
+[0mrepeated.txt ARC cache size       10,               20 req, miss ratio 0.0500, throughput 1.12 MQPS
 EXACT requests=20 misses=1
 
 PASS arc: capacity=10, misses=1/20
@@ -252,39 +252,39 @@ ERROR misses differs at capacity 4
 $ python3 -I /workspace/tests/compare_reference.py invalid-prototype.txt exact_same.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 72, in main
+  File "/workspace/tests/compare_reference.py", line 71, in main
     requests, prototype = read_prototype(prototype_path)
                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 30, in read_prototype
+  File "/workspace/tests/compare_reference.py", line 29, in read_prototype
     raise ValueError("invalid unique object count")
 ValueError: invalid unique object count
 
 $ python3 -I /workspace/tests/compare_reference.py invalid-prototype.txt exact_same.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 72, in main
+  File "/workspace/tests/compare_reference.py", line 71, in main
     requests, prototype = read_prototype(prototype_path)
                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 30, in read_prototype
+  File "/workspace/tests/compare_reference.py", line 29, in read_prototype
     raise ValueError("invalid unique object count")
 ValueError: invalid unique object count
 
 $ python3 -I /workspace/tests/compare_reference.py invalid-prototype.txt exact_same.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 72, in main
+  File "/workspace/tests/compare_reference.py", line 71, in main
     requests, prototype = read_prototype(prototype_path)
                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 40, in read_prototype
+  File "/workspace/tests/compare_reference.py", line 39, in read_prototype
     validate_row(requests, row)
     ~~~~~~~~~~~~^^^^^^^^^^^^^^^
   File "/workspace/tests/compare_reference.py", line 10, in validate_row
@@ -294,29 +294,29 @@ ValueError: miss count is outside the request count
 $ python3 -I /workspace/tests/compare_reference.py invalid-prototype.txt exact_same.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 72, in main
+  File "/workspace/tests/compare_reference.py", line 71, in main
     requests, prototype = read_prototype(prototype_path)
                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 40, in read_prototype
+  File "/workspace/tests/compare_reference.py", line 39, in read_prototype
     validate_row(requests, row)
     ~~~~~~~~~~~~^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 17, in validate_row
+  File "/workspace/tests/compare_reference.py", line 16, in validate_row
     raise ValueError("miss ratio disagrees with integer counters")
 ValueError: miss ratio disagrees with integer counters
 
 $ python3 -I /workspace/tests/compare_reference.py invalid-prototype.txt exact_same.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 72, in main
+  File "/workspace/tests/compare_reference.py", line 71, in main
     requests, prototype = read_prototype(prototype_path)
                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 40, in read_prototype
+  File "/workspace/tests/compare_reference.py", line 39, in read_prototype
     validate_row(requests, row)
     ~~~~~~~~~~~~^^^^^^^^^^^^^^^
   File "/workspace/tests/compare_reference.py", line 14, in validate_row
@@ -326,51 +326,51 @@ ValueError: invalid miss ratio
 $ python3 -I /workspace/tests/compare_reference.py invalid-prototype.txt exact_same.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 72, in main
+  File "/workspace/tests/compare_reference.py", line 71, in main
     requests, prototype = read_prototype(prototype_path)
                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 37, in read_prototype
+  File "/workspace/tests/compare_reference.py", line 36, in read_prototype
     raise ValueError("malformed prototype record")
 ValueError: malformed prototype record
 
 $ python3 -I /workspace/tests/compare_reference.py invalid-prototype.txt exact_same.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 72, in main
+  File "/workspace/tests/compare_reference.py", line 71, in main
     requests, prototype = read_prototype(prototype_path)
                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 27, in read_prototype
+  File "/workspace/tests/compare_reference.py", line 26, in read_prototype
     raise ValueError("duplicate prototype header")
 ValueError: duplicate prototype header
 
 $ python3 -I /workspace/tests/compare_reference.py invalid-prototype.txt exact_same.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 72, in main
+  File "/workspace/tests/compare_reference.py", line 71, in main
     requests, prototype = read_prototype(prototype_path)
                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 34, in read_prototype
+  File "/workspace/tests/compare_reference.py", line 33, in read_prototype
     raise ValueError("invalid or duplicate prototype capacity")
 ValueError: invalid or duplicate prototype capacity
 
 $ python3 -I /workspace/tests/compare_reference.py prototype.txt invalid-reference.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 73, in main
+  File "/workspace/tests/compare_reference.py", line 72, in main
     reference = read_reference(reference_path, "arc")
-  File "/workspace/tests/compare_reference.py", line 67, in read_reference
+  File "/workspace/tests/compare_reference.py", line 66, in read_reference
     validate_row(row["requests"], row)
     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
   File "/workspace/tests/compare_reference.py", line 10, in validate_row
@@ -380,24 +380,24 @@ ValueError: miss count is outside the request count
 $ python3 -I /workspace/tests/compare_reference.py prototype.txt invalid-reference.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 73, in main
+  File "/workspace/tests/compare_reference.py", line 72, in main
     reference = read_reference(reference_path, "arc")
-  File "/workspace/tests/compare_reference.py", line 65, in read_reference
+  File "/workspace/tests/compare_reference.py", line 64, in read_reference
     raise ValueError("malformed reference record")
 ValueError: malformed reference record
 
 $ python3 -I /workspace/tests/compare_reference.py prototype.txt invalid-reference.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 73, in main
+  File "/workspace/tests/compare_reference.py", line 72, in main
     reference = read_reference(reference_path, "arc")
-  File "/workspace/tests/compare_reference.py", line 67, in read_reference
+  File "/workspace/tests/compare_reference.py", line 66, in read_reference
     validate_row(row["requests"], row)
     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
   File "/workspace/tests/compare_reference.py", line 14, in validate_row
@@ -407,12 +407,12 @@ ValueError: invalid miss ratio
 $ python3 -I /workspace/tests/compare_reference.py prototype.txt invalid-reference.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 73, in main
+  File "/workspace/tests/compare_reference.py", line 72, in main
     reference = read_reference(reference_path, "arc")
-  File "/workspace/tests/compare_reference.py", line 67, in read_reference
+  File "/workspace/tests/compare_reference.py", line 66, in read_reference
     validate_row(row["requests"], row)
     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
   File "/workspace/tests/compare_reference.py", line 14, in validate_row
@@ -422,64 +422,64 @@ ValueError: invalid miss ratio
 $ python3 -I /workspace/tests/compare_reference.py prototype.txt invalid-reference.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 73, in main
+  File "/workspace/tests/compare_reference.py", line 72, in main
     reference = read_reference(reference_path, "arc")
-  File "/workspace/tests/compare_reference.py", line 67, in read_reference
+  File "/workspace/tests/compare_reference.py", line 66, in read_reference
     validate_row(row["requests"], row)
     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 17, in validate_row
+  File "/workspace/tests/compare_reference.py", line 16, in validate_row
     raise ValueError("miss ratio disagrees with integer counters")
 ValueError: miss ratio disagrees with integer counters
 
 $ python3 -I /workspace/tests/compare_reference.py prototype.txt invalid-reference.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 73, in main
+  File "/workspace/tests/compare_reference.py", line 72, in main
     reference = read_reference(reference_path, "arc")
-  File "/workspace/tests/compare_reference.py", line 59, in read_reference
+  File "/workspace/tests/compare_reference.py", line 58, in read_reference
     raise ValueError(f"inconsistent reference request counts at {capacity}")
 ValueError: inconsistent reference request counts at 4
 
 $ python3 -I /workspace/tests/compare_reference.py prototype.txt invalid-reference.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 73, in main
+  File "/workspace/tests/compare_reference.py", line 72, in main
     reference = read_reference(reference_path, "arc")
-  File "/workspace/tests/compare_reference.py", line 62, in read_reference
+  File "/workspace/tests/compare_reference.py", line 61, in read_reference
     raise ValueError(f"duplicate reference {field} at {capacity}")
 ValueError: duplicate reference misses at 4
 
 $ python3 -I /workspace/tests/compare_reference.py prototype.txt invalid-reference.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 73, in main
+  File "/workspace/tests/compare_reference.py", line 72, in main
     reference = read_reference(reference_path, "arc")
-  File "/workspace/tests/compare_reference.py", line 62, in read_reference
+  File "/workspace/tests/compare_reference.py", line 61, in read_reference
     raise ValueError(f"duplicate reference {field} at {capacity}")
 ValueError: duplicate reference ratio at 4
 
 $ python3 -I /workspace/tests/compare_reference.py invalid-prototype.txt invalid-reference.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 72, in main
+  File "/workspace/tests/compare_reference.py", line 71, in main
     requests, prototype = read_prototype(prototype_path)
                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 40, in read_prototype
+  File "/workspace/tests/compare_reference.py", line 39, in read_prototype
     validate_row(requests, row)
     ~~~~~~~~~~~~^^^^^^^^^^^^^^^
   File "/workspace/tests/compare_reference.py", line 10, in validate_row
@@ -489,47 +489,47 @@ ValueError: miss count is outside the request count
 $ python3 -I /workspace/tests/compare_reference.py invalid-prototype.txt invalid-reference.txt
 exit 1
 Traceback (most recent call last):
-  File "/workspace/tests/compare_reference.py", line 100, in <module>
+  File "/workspace/tests/compare_reference.py", line 99, in <module>
     sys.exit(main(sys.argv[1], sys.argv[2]))
              ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 72, in main
+  File "/workspace/tests/compare_reference.py", line 71, in main
     requests, prototype = read_prototype(prototype_path)
                           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/workspace/tests/compare_reference.py", line 30, in read_prototype
+  File "/workspace/tests/compare_reference.py", line 29, in read_prototype
     raise ValueError("invalid unique object count")
 ValueError: invalid unique object count
 
 PASS comparison fails when prototype and reference differ
 $ zstd -q prefix-source.bin -o prefix-source.zst
 
-$ bash /workspace/tests/fetch_trace_prefix.sh file:///tmp/tmp6q8lxstd/prefix-source.zst prefix.bin 2 f3e42def0777bf29258f237b06f5ade84e09c35f98c106a1c3fd41227e251933
-prefix.bin.part.ddcdTY: OK
+$ bash /workspace/tests/fetch_trace_prefix.sh file:///tmp/tmpwbzrka3h/prefix-source.zst prefix.bin 2 f3e42def0777bf29258f237b06f5ade84e09c35f98c106a1c3fd41227e251933
+prefix.bin.part.KVCHZs: OK
 
-$ bash /workspace/tests/fetch_trace_prefix.sh file:///tmp/tmp6q8lxstd/prefix-source.zst bad-hash.bin 2 0000000000000000000000000000000000000000000000000000000000000000
+$ bash /workspace/tests/fetch_trace_prefix.sh file:///tmp/tmpwbzrka3h/prefix-source.zst bad-hash.bin 2 0000000000000000000000000000000000000000000000000000000000000000
 exit 1
-bad-hash.bin.part.rWKstv: FAILED
+bad-hash.bin.part.s6aext: FAILED
 sha256sum: WARNING: 1 computed checksum did NOT match
 
-$ bash /workspace/tests/fetch_trace_prefix.sh file:///tmp/tmp6q8lxstd/prefix-source.zst short.bin 5 f3e42def0777bf29258f237b06f5ade84e09c35f98c106a1c3fd41227e251933
+$ bash /workspace/tests/fetch_trace_prefix.sh file:///tmp/tmpwbzrka3h/prefix-source.zst short.bin 5 f3e42def0777bf29258f237b06f5ade84e09c35f98c106a1c3fd41227e251933
 exit 1
 
 PASS prefix download checks length/hash and does not publish invalid data
-$ python3 /tmp/tmp6q8lxstd/cached-input-check/tests/check_large_traces.py
+$ python3 /tmp/tmpwbzrka3h/cached-input-check/tests/check_large_traces.py
 exit 1
 Traceback (most recent call last):
-  File "/tmp/tmp6q8lxstd/cached-input-check/tests/check_large_traces.py", line 125, in <module>
+  File "/tmp/tmpwbzrka3h/cached-input-check/tests/check_large_traces.py", line 125, in <module>
     main()
     ~~~~^^
-  File "/tmp/tmp6q8lxstd/cached-input-check/tests/check_large_traces.py", line 64, in main
+  File "/tmp/tmpwbzrka3h/cached-input-check/tests/check_large_traces.py", line 64, in main
     raise ValueError(f"cached prefix has wrong length or SHA-256: {trace}")
-ValueError: cached prefix has wrong length or SHA-256: /tmp/tmp6q8lxstd/cached-input-check/data/meta_reag-10m.bin
+ValueError: cached prefix has wrong length or SHA-256: /tmp/tmpwbzrka3h/cached-input-check/data/meta_reag-10m.bin
 
 PASS corrupted cache is rejected and stale completion manifest is removed
 Bundled CSV SHA256: cf4d37d041569bb30c3bc32b7b54dd40b40438c53ee72e4919acf810063d189a
 $ cachesim /opt/sieve-reference/libCacheSim/data/twitter_cluster52.csv csv sieve 1024 --ignore-obj-size 1 --num-req 1000 -t time-col=1,obj-id-col=2,obj-size-col=3,delimiter=,
-[32m[INFO]  11-02-2026 21:29:56    csv.c:150  (tid=124172188747072): detect csv trace has header 1
-[0m[32m[INFO]  11-02-2026 21:29:56 cli_parser.c:545  (tid=124172188747072): trace path: /opt/sieve-reference/libCacheSim/data/twitter_cluster52.csv, trace_type CSV_TRACE, ofilepath twitter_cluster52.csv.cachesim, 20 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, trace-type-params: time-col=1,obj-id-col=2,obj-size-col=3,delimiter=,, ignore object size
-[0m/opt/sieve-reference/libCacheSim/data/twitter_cluster52.csv Sieve cache size     1KiB,             1000 req, miss ratio 0.4730, throughput 2.19 MQPS
+[32m[INFO]  11-03-2026 13:13:45    csv.c:150  (tid=132778381047104): detect csv trace has header 1
+[0m[32m[INFO]  11-03-2026 13:13:45 cli_parser.c:545  (tid=132778381047104): trace path: /opt/sieve-reference/libCacheSim/data/twitter_cluster52.csv, trace_type CSV_TRACE, ofilepath twitter_cluster52.csv.cachesim, 4 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, sieve, trace-type-params: time-col=1,obj-id-col=2,obj-size-col=3,delimiter=,, ignore object size
+[0m/opt/sieve-reference/libCacheSim/data/twitter_cluster52.csv Sieve cache size     1KiB,             1000 req, miss ratio 0.4730, throughput 2.33 MQPS
 EXACT requests=1000 misses=473
 
 PASS bundled CSV: 1000 requests parsed; this is a format check

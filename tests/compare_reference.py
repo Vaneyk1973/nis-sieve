@@ -12,7 +12,6 @@ def validate_row(requests, row):
         ratio = float(row["ratio"])
         if not math.isfinite(ratio) or not 0 <= ratio <= 1:
             raise ValueError("invalid miss ratio")
-        # The CLI renders ratios to four decimal places.
         if "misses" in row and abs(ratio - row["misses"] / requests) > 0.000050000001:
             raise ValueError("miss ratio disagrees with integer counters")
 

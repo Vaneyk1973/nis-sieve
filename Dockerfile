@@ -8,7 +8,6 @@ RUN apt-get update \
     && python3 -m venv /opt/venv \
     && /opt/venv/bin/pip install --no-cache-dir meson==1.12.1
 
-# The course pins this revision; the reference uses CMake, our project uses Meson.
 RUN git init /opt/sieve-reference \
     && git -C /opt/sieve-reference fetch --depth 1 \
         https://github.com/cacheMon/NSDI24-SIEVE.git \
@@ -20,7 +19,6 @@ RUN git init /opt/sieve-reference \
     && cmake --build /opt/sieve-reference/libCacheSim/_build \
         --target cachesim --parallel 2
 
-# Expose existing integer counters; the reference cache algorithms stay unchanged.
 RUN python3 - <<'PY'
 from pathlib import Path
 p = Path('/opt/sieve-reference/libCacheSim/libCacheSim/bin/cachesim/sim.c')

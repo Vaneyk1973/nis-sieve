@@ -1,3 +1,3 @@
-[32m[INFO]  11-02-2026 21:31:09 cli_parser.c:545  (tid=127150875977024): trace path: /workspace/data/twitter10-10m.bin, trace_type ORACLE_GENERAL_TRACE, ofilepath twitter10-10m.bin.cachesim, 1 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
-[0m/workspace/data/twitter10-10m.bin LRU cache size   146KiB,         10000000 req, miss ratio 0.5000, throughput 7.83 MQPS
+[32m[INFO]  11-03-2026 13:16:06 cli_parser.c:545  (tid=139001640531264): trace path: /workspace/data/twitter10-10m.bin, trace_type ORACLE_GENERAL_TRACE, ofilepath twitter10-10m.bin.cachesim, 1 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, lru, ignore object size
+[0m/workspace/data/twitter10-10m.bin LRU cache size   146KiB,         10000000 req, miss ratio 0.5000, throughput 6.03 MQPS
 EXACT requests=10000000 misses=5000176

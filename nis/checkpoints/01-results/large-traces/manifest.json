@@ -59,12 +59,12 @@
     }
   ],
   "source_sha256": {
-    "Dockerfile": "e64f02ea4eaf2fba293b23d093cc87e2cae009c3a65824f6b5fc90ecef51f566",
+    "Dockerfile": "f2df791bda92d21fe3a30f68fc292e26f63514ff235a07204eaf82c548d9c903",
     "prototypes/arc/arc.hpp": "68d99b6a76623631680c8bdbb0fad4628645ff15320818ee2840e7ad3b1b19ba",
     "prototypes/arc/replay_arc.cpp": "37def4d887934525ff3abfec4c4910ac89a88fb51045e932fd554573f455772f",
     "tests/check_large_traces.py": "670770b470b0e0d51b0c9a97c739b733d1a55e33f92fcac71eb08577abf8f7df",
-    "tests/fetch_trace_prefix.sh": "576bd4e3b3d7d6ffee3675676b06b608eb35f956b4057e2accf0920544d01e49",
-    "tests/compare_reference.py": "788f6a1a98d75185844b8483496c0f9cb1717b6a7a143689c47040f3426e791b"
+    "tests/fetch_trace_prefix.sh": "e6aa446a250819e4ff54cc889572c57430cec4963a2d033e68fed6504515e505",
+    "tests/compare_reference.py": "0c18b40fdbdee21e3063cfd4f33d32c7c426f35fffbb05a54c9ba52c430ca510"
   },
   "maximum_child_rss_kib": 610560,
   "reference_instrumentation": "Extra printf of existing request/miss counters; algorithms unchanged",

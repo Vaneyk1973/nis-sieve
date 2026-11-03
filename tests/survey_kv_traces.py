@@ -3,7 +3,6 @@ import hashlib
 from pathlib import Path
 import re
 import subprocess
-import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -79,7 +78,7 @@ def reference(path, policy, capacity):
 
 def replay(binary, path, capacities):
     output = subprocess.run(
-        [str(binary), str(path), *map(str, capacities)],
+        [str(binary), str(path), *capacities],
         text=True, stdout=subprocess.PIPE, check=True,
     ).stdout
     header = re.search(r"requests (\d+) unique (\d+)", output)
@@ -87,18 +86,11 @@ def replay(binary, path, capacities):
     return int(header[1]), int(header[2]), misses
 
 
-def unique_count(binary, path):
-    output = subprocess.run(
-        [str(binary), str(path), "1"], text=True, stdout=subprocess.PIPE, check=True
-    ).stdout
-    return int(re.search(r"unique (\d+)", output)[1])
-
-
 def analyze(binary, source, start, path):
-    digest = hashlib.sha256(path.read_bytes()).hexdigest()
-    unique = unique_count(binary, path)
-    capacities = {percent: max(1, int(unique * percent / 100)) for percent in PERCENTS}
-    requests, _, prototype = replay(binary, path, capacities.values())
+    with path.open("rb") as trace:
+        digest = hashlib.file_digest(trace, "sha256").hexdigest()
+    requests, unique, prototype = replay(binary, path, [f"{percent}%" for percent in PERCENTS])
+    capacities = dict(zip(PERCENTS, prototype))
     rows = []
     for percent, capacity in capacities.items():
         counted = {policy: reference(path, policy, capacity) for policy in REFERENCE_POLICIES}
@@ -161,4 +153,4 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
