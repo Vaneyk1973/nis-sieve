@@ -124,6 +124,7 @@ def analyze(binary, source, start, path):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    (ROOT / "data").mkdir(exist_ok=True)
     results = OUT / "results.csv"
     with tempfile.TemporaryDirectory(dir=ROOT / "data") as directory, results.open("w", newline="") as stream:
         binary = Path(directory) / "replay_arc"
