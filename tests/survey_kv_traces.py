@@ -97,7 +97,8 @@ def analyze(binary, source, start, path):
         reference_requests = counted["arc"][0]
         ratios = {policy: misses / total for policy, (total, misses) in counted.items()}
         first_access = unique / requests
-        worst, best = max(ratios.values()), min(ratios.values())
+        compared = [ratios[policy] for policy in ("lru", "sieve", "arc")]
+        worst, best = max(compared), min(compared)
         excess = (best - first_access) * 100
         spread = (worst - best) * 100
         rows.append({
