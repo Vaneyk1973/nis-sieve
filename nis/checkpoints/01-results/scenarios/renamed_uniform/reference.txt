@@ -1,0 +1,18 @@
+arc 1 /tmp/tmpod7o3h23/renamed_uniform.bin ARC cache size        1,             8192 req, miss ratio 0.9927, throughput 22.38 MQPS
+arc 1 EXACT requests=8192 misses=8132
+arc 2 /tmp/tmpod7o3h23/renamed_uniform.bin ARC cache size        2,             8192 req, miss ratio 0.9838, throughput 22.63 MQPS
+arc 2 EXACT requests=8192 misses=8059
+arc 3 /tmp/tmpod7o3h23/renamed_uniform.bin ARC cache size        3,             8192 req, miss ratio 0.9755, throughput 22.31 MQPS
+arc 3 EXACT requests=8192 misses=7991
+arc 7 /tmp/tmpod7o3h23/renamed_uniform.bin ARC cache size        7,             8192 req, miss ratio 0.9418, throughput 21.29 MQPS
+arc 7 EXACT requests=8192 misses=7715
+arc 8 /tmp/tmpod7o3h23/renamed_uniform.bin ARC cache size        8,             8192 req, miss ratio 0.9359, throughput 21.05 MQPS
+arc 8 EXACT requests=8192 misses=7667
+arc 9 /tmp/tmpod7o3h23/renamed_uniform.bin ARC cache size        9,             8192 req, miss ratio 0.9292, throughput 21.07 MQPS
+arc 9 EXACT requests=8192 misses=7612
+arc 16 /tmp/tmpod7o3h23/renamed_uniform.bin ARC cache size       16,             8192 req, miss ratio 0.8743, throughput 19.75 MQPS
+arc 16 EXACT requests=8192 misses=7162
+arc 64 /tmp/tmpod7o3h23/renamed_uniform.bin ARC cache size       64,             8192 req, miss ratio 0.5020, throughput 24.75 MQPS
+arc 64 EXACT requests=8192 misses=4112
+arc 129 /tmp/tmpod7o3h23/renamed_uniform.bin ARC cache size      129,             8192 req, miss ratio 0.0156, throughput 56.89 MQPS
+arc 129 EXACT requests=8192 misses=128

@@ -1,0 +1,10 @@
+requests 4096 unique 1
+capacity 1 misses 1 miss_ratio 0.0002 evictions 0 ghost_hits 0 list_ops 4096
+capacity 2 misses 1 miss_ratio 0.0002 evictions 0 ghost_hits 0 list_ops 4096
+capacity 3 misses 1 miss_ratio 0.0002 evictions 0 ghost_hits 0 list_ops 4096
+capacity 7 misses 1 miss_ratio 0.0002 evictions 0 ghost_hits 0 list_ops 4096
+capacity 8 misses 1 miss_ratio 0.0002 evictions 0 ghost_hits 0 list_ops 4096
+capacity 9 misses 1 miss_ratio 0.0002 evictions 0 ghost_hits 0 list_ops 4096
+capacity 16 misses 1 miss_ratio 0.0002 evictions 0 ghost_hits 0 list_ops 4096
+capacity 64 misses 1 miss_ratio 0.0002 evictions 0 ghost_hits 0 list_ops 4096
+capacity 129 misses 1 miss_ratio 0.0002 evictions 0 ghost_hits 0 list_ops 4096

@@ -1,0 +1,4 @@
+requests 5000000 unique 1746941
+capacity 1746 misses 2425644 miss_ratio 0.4851 evictions 2423898 ghost_hits 54010 list_ops 9792040
+capacity 17469 misses 2175503 miss_ratio 0.4351 evictions 2158034 ghost_hits 66567 list_ops 9232032
+capacity 174694 misses 1931968 miss_ratio 0.3864 evictions 1757274 ghost_hits 67503 list_ops 8272351

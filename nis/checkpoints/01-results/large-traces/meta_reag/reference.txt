@@ -1,0 +1,48 @@
+fifo 3214 /workspace/data/meta_reag-10m.bin FIFO cache size     3KiB,         10000000 req, miss ratio 0.4747, throughput 17.95 MQPS
+fifo 3214 EXACT requests=10000000 misses=4746792
+fifo 9643 /workspace/data/meta_reag-10m.bin FIFO cache size     9KiB,         10000000 req, miss ratio 0.4525, throughput 17.32 MQPS
+fifo 9643 EXACT requests=10000000 misses=4525356
+fifo 32145 /workspace/data/meta_reag-10m.bin FIFO cache size    31KiB,         10000000 req, miss ratio 0.4259, throughput 12.58 MQPS
+fifo 32145 EXACT requests=10000000 misses=4259042
+fifo 96437 /workspace/data/meta_reag-10m.bin FIFO cache size    94KiB,         10000000 req, miss ratio 0.4011, throughput 12.64 MQPS
+fifo 96437 EXACT requests=10000000 misses=4011066
+fifo 321456 /workspace/data/meta_reag-10m.bin FIFO cache size   314KiB,         10000000 req, miss ratio 0.3724, throughput 12.92 MQPS
+fifo 321456 EXACT requests=10000000 misses=3723737
+fifo 964370 /workspace/data/meta_reag-10m.bin FIFO cache size   942KiB,         10000000 req, miss ratio 0.3466, throughput 12.72 MQPS
+fifo 964370 EXACT requests=10000000 misses=3466368
+lru 3214 /workspace/data/meta_reag-10m.bin LRU cache size     3KiB,         10000000 req, miss ratio 0.4684, throughput 15.35 MQPS
+lru 3214 EXACT requests=10000000 misses=4684173
+lru 9643 /workspace/data/meta_reag-10m.bin LRU cache size     9KiB,         10000000 req, miss ratio 0.4455, throughput 14.89 MQPS
+lru 9643 EXACT requests=10000000 misses=4454705
+lru 32145 /workspace/data/meta_reag-10m.bin LRU cache size    31KiB,         10000000 req, miss ratio 0.4180, throughput 12.01 MQPS
+lru 32145 EXACT requests=10000000 misses=4179823
+lru 96437 /workspace/data/meta_reag-10m.bin LRU cache size    94KiB,         10000000 req, miss ratio 0.3932, throughput 8.72 MQPS
+lru 96437 EXACT requests=10000000 misses=3932241
+lru 321456 /workspace/data/meta_reag-10m.bin LRU cache size   314KiB,         10000000 req, miss ratio 0.3654, throughput 9.57 MQPS
+lru 321456 EXACT requests=10000000 misses=3653666
+lru 964370 /workspace/data/meta_reag-10m.bin LRU cache size   942KiB,         10000000 req, miss ratio 0.3410, throughput 8.48 MQPS
+lru 964370 EXACT requests=10000000 misses=3410013
+sieve 3214 /workspace/data/meta_reag-10m.bin Sieve cache size     3KiB,         10000000 req, miss ratio 0.4596, throughput 13.96 MQPS
+sieve 3214 EXACT requests=10000000 misses=4595857
+sieve 9643 /workspace/data/meta_reag-10m.bin Sieve cache size     9KiB,         10000000 req, miss ratio 0.4365, throughput 10.67 MQPS
+sieve 9643 EXACT requests=10000000 misses=4364959
+sieve 32145 /workspace/data/meta_reag-10m.bin Sieve cache size    31KiB,         10000000 req, miss ratio 0.4118, throughput 7.21 MQPS
+sieve 32145 EXACT requests=10000000 misses=4117744
+sieve 96437 /workspace/data/meta_reag-10m.bin Sieve cache size    94KiB,         10000000 req, miss ratio 0.3892, throughput 6.42 MQPS
+sieve 96437 EXACT requests=10000000 misses=3891600
+sieve 321456 /workspace/data/meta_reag-10m.bin Sieve cache size   314KiB,         10000000 req, miss ratio 0.3644, throughput 6.01 MQPS
+sieve 321456 EXACT requests=10000000 misses=3644141
+sieve 964370 /workspace/data/meta_reag-10m.bin Sieve cache size   942KiB,         10000000 req, miss ratio 0.3398, throughput 6.80 MQPS
+sieve 964370 EXACT requests=10000000 misses=3398460
+arc 3214 /workspace/data/meta_reag-10m.bin ARC cache size     3KiB,         10000000 req, miss ratio 0.4591, throughput 8.48 MQPS
+arc 3214 EXACT requests=10000000 misses=4591460
+arc 9643 /workspace/data/meta_reag-10m.bin ARC cache size     9KiB,         10000000 req, miss ratio 0.4360, throughput 7.95 MQPS
+arc 9643 EXACT requests=10000000 misses=4360175
+arc 32145 /workspace/data/meta_reag-10m.bin ARC cache size    31KiB,         10000000 req, miss ratio 0.4107, throughput 9.99 MQPS
+arc 32145 EXACT requests=10000000 misses=4106897
+arc 96437 /workspace/data/meta_reag-10m.bin ARC cache size    94KiB,         10000000 req, miss ratio 0.3876, throughput 9.49 MQPS
+arc 96437 EXACT requests=10000000 misses=3876106
+arc 321456 /workspace/data/meta_reag-10m.bin ARC cache size   314KiB,         10000000 req, miss ratio 0.3630, throughput 8.92 MQPS
+arc 321456 EXACT requests=10000000 misses=3629781
+arc 964370 /workspace/data/meta_reag-10m.bin ARC cache size   942KiB,         10000000 req, miss ratio 0.3390, throughput 10.53 MQPS
+arc 964370 EXACT requests=10000000 misses=3390264

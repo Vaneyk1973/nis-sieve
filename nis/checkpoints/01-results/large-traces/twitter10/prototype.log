@@ -1,0 +1,7 @@
+requests 10000000 unique 5000176
+capacity 5000 misses 5000193 miss_ratio 0.5000 evictions 4995193 ghost_hits 17 list_ops 19985369
+capacity 15000 misses 5000182 miss_ratio 0.5000 evictions 4985182 ghost_hits 6 list_ops 19955358
+capacity 50001 misses 5000185 miss_ratio 0.5000 evictions 4950184 ghost_hits 9 list_ops 19850358
+capacity 150005 misses 5000185 miss_ratio 0.5000 evictions 4850180 ghost_hits 9 list_ops 19550346
+capacity 500017 misses 5000182 miss_ratio 0.5000 evictions 4500165 ghost_hits 6 list_ops 18500307
+capacity 1500052 misses 5000185 miss_ratio 0.5000 evictions 3500133 ghost_hits 9 list_ops 15500205
