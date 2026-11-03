@@ -13,6 +13,7 @@ TRACES = (
     ("meta_reag", "metaCDN/meta_reag.oracleGeneral.zst"),
     ("cluster50", "twitter/cluster50.oracleGeneral.zst"),
     ("cluster53", "twitter/cluster53.oracleGeneral.zst"),
+    ("cluster3", "twitter/cluster3.oracleGeneral.zst"),
 )
 READ_REQUESTS = 30_000_000
 WINDOW_REQUESTS = 10_000_000
