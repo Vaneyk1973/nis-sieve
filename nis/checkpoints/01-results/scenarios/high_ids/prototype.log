@@ -1,0 +1,10 @@
+requests 5120 unique 5
+capacity 1 misses 5120 miss_ratio 1.0000 evictions 5119 ghost_hits 0 list_ops 10239
+capacity 2 misses 5120 miss_ratio 1.0000 evictions 5118 ghost_hits 0 list_ops 10238
+capacity 3 misses 5120 miss_ratio 1.0000 evictions 5117 ghost_hits 0 list_ops 10237
+capacity 7 misses 5 miss_ratio 0.0010 evictions 0 ghost_hits 0 list_ops 5120
+capacity 8 misses 5 miss_ratio 0.0010 evictions 0 ghost_hits 0 list_ops 5120
+capacity 9 misses 5 miss_ratio 0.0010 evictions 0 ghost_hits 0 list_ops 5120
+capacity 16 misses 5 miss_ratio 0.0010 evictions 0 ghost_hits 0 list_ops 5120
+capacity 64 misses 5 miss_ratio 0.0010 evictions 0 ghost_hits 0 list_ops 5120
+capacity 129 misses 5 miss_ratio 0.0010 evictions 0 ghost_hits 0 list_ops 5120

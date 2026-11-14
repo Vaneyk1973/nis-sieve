@@ -1,0 +1,6 @@
+requests 5000000
+time_span_seconds 77070
+non_monotonic_time 0
+size_is_2^32-1 25902 (0.5180%)
+size_is_zero 0 (0.0000%)
+next_access_negative 1218402 (24.3680%)

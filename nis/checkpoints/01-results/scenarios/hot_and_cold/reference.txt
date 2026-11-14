@@ -1,0 +1,18 @@
+arc 1 /tmp/tmpod7o3h23/hot_and_cold.bin ARC cache size        1,             8192 req, miss ratio 1.0000, throughput 10.42 MQPS
+arc 1 EXACT requests=8192 misses=8192
+arc 2 /tmp/tmpod7o3h23/hot_and_cold.bin ARC cache size        2,             8192 req, miss ratio 1.0000, throughput 9.59 MQPS
+arc 2 EXACT requests=8192 misses=8192
+arc 3 /tmp/tmpod7o3h23/hot_and_cold.bin ARC cache size        3,             8192 req, miss ratio 1.0000, throughput 8.86 MQPS
+arc 3 EXACT requests=8192 misses=8192
+arc 7 /tmp/tmpod7o3h23/hot_and_cold.bin ARC cache size        7,             8192 req, miss ratio 1.0000, throughput 9.29 MQPS
+arc 7 EXACT requests=8192 misses=8192
+arc 8 /tmp/tmpod7o3h23/hot_and_cold.bin ARC cache size        8,             8192 req, miss ratio 1.0000, throughput 7.55 MQPS
+arc 8 EXACT requests=8192 misses=8192
+arc 9 /tmp/tmpod7o3h23/hot_and_cold.bin ARC cache size        9,             8192 req, miss ratio 1.0000, throughput 8.98 MQPS
+arc 9 EXACT requests=8192 misses=8192
+arc 16 /tmp/tmpod7o3h23/hot_and_cold.bin ARC cache size       16,             8192 req, miss ratio 0.5010, throughput 10.28 MQPS
+arc 16 EXACT requests=8192 misses=4104
+arc 64 /tmp/tmpod7o3h23/hot_and_cold.bin ARC cache size       64,             8192 req, miss ratio 0.5010, throughput 10.54 MQPS
+arc 64 EXACT requests=8192 misses=4104
+arc 129 /tmp/tmpod7o3h23/hot_and_cold.bin ARC cache size      129,             8192 req, miss ratio 0.5010, throughput 9.87 MQPS
+arc 129 EXACT requests=8192 misses=4104

@@ -1,0 +1,3 @@
+[32m[INFO]  11-03-2026 13:16:21 cli_parser.c:545  (tid=133975575299392): trace path: /workspace/data/twitter10-10m.bin, trace_type ORACLE_GENERAL_TRACE, ofilepath twitter10-10m.bin.cachesim, 1 threads, warmup -1 sec, total 1 algo x 1 size = 1 caches, arc, ignore object size
+[0m/workspace/data/twitter10-10m.bin ARC cache size     5KiB,         10000000 req, miss ratio 0.5000, throughput 7.56 MQPS
+EXACT requests=10000000 misses=5000193

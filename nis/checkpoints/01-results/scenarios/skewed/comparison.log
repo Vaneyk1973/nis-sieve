@@ -1,0 +1,10 @@
+ok capacity 1: misses, prototype 7730, reference 7730
+ok capacity 2: misses, prototype 6916, reference 6916
+ok capacity 3: misses, prototype 6340, reference 6340
+ok capacity 7: misses, prototype 5073, reference 5073
+ok capacity 8: misses, prototype 4865, reference 4865
+ok capacity 9: misses, prototype 4684, reference 4684
+ok capacity 16: misses, prototype 3793, reference 3793
+ok capacity 64: misses, prototype 1531, reference 1531
+ok capacity 129: misses, prototype 128, reference 128
+PASS prototype matches reference

@@ -1,0 +1,18 @@
+arc 1 /tmp/tmpod7o3h23/high_ids.bin ARC cache size        1,             5120 req, miss ratio 1.0000, throughput 25.12 MQPS
+arc 1 EXACT requests=5120 misses=5120
+arc 2 /tmp/tmpod7o3h23/high_ids.bin ARC cache size        2,             5120 req, miss ratio 1.0000, throughput 28.29 MQPS
+arc 2 EXACT requests=5120 misses=5120
+arc 3 /tmp/tmpod7o3h23/high_ids.bin ARC cache size        3,             5120 req, miss ratio 1.0000, throughput 21.24 MQPS
+arc 3 EXACT requests=5120 misses=5120
+arc 7 /tmp/tmpod7o3h23/high_ids.bin ARC cache size        7,             5120 req, miss ratio 0.0010, throughput 72.06 MQPS
+arc 7 EXACT requests=5120 misses=5
+arc 8 /tmp/tmpod7o3h23/high_ids.bin ARC cache size        8,             5120 req, miss ratio 0.0010, throughput 71.11 MQPS
+arc 8 EXACT requests=5120 misses=5
+arc 9 /tmp/tmpod7o3h23/high_ids.bin ARC cache size        9,             5120 req, miss ratio 0.0010, throughput 73.04 MQPS
+arc 9 EXACT requests=5120 misses=5
+arc 16 /tmp/tmpod7o3h23/high_ids.bin ARC cache size       16,             5120 req, miss ratio 0.0010, throughput 68.17 MQPS
+arc 16 EXACT requests=5120 misses=5
+arc 64 /tmp/tmpod7o3h23/high_ids.bin ARC cache size       64,             5120 req, miss ratio 0.0010, throughput 73.04 MQPS
+arc 64 EXACT requests=5120 misses=5
+arc 129 /tmp/tmpod7o3h23/high_ids.bin ARC cache size      129,             5120 req, miss ratio 0.0010, throughput 71.11 MQPS
+arc 129 EXACT requests=5120 misses=5

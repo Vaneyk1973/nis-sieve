@@ -1,0 +1,2 @@
+requests 8192 unique 128
+capacity 8 misses 7667 miss_ratio 0.9359 evictions 7659 ghost_hits 483 list_ops 22694
